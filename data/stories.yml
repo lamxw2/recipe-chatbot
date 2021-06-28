@@ -58,15 +58,3 @@ stories:
   - slot_was_set:
     - want_recipe: false
   
-
-- story: interactive_story_1
-  steps:
-  - intent: hello
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - intent: good
-  - action: utter_happy
-  - action: utter_want_recipe
-  - action: utter_provide_recipe
-  - intent: goodbye
-  - action: utter_goodbye
