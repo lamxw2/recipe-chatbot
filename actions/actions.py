@@ -18,6 +18,7 @@ class ActionHelloWorld(Action):
     def name(self) -> Text:
         return "action_hello_world"
 
+    # custom dispatcher, tracker and domain classes
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -25,3 +26,13 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="Hello World!")
 
         return []
+
+#class ActionCheckWantRecipe(Action):
+#
+#    def name(self) -> Text:
+#        return "action_want_recipe"
+#    
+#    def run(self, dispatcher, tracker, domain):
+#        
+#        dispatcher.utter_message()
+#        return []
