@@ -75,6 +75,7 @@ nlu:
     - im ok
     - I'm ok
     - doing fine
+    - good
 - intent: mood_unhappy
   examples: |
     - my day was horrible

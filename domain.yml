@@ -6,15 +6,17 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - greet:
-    use_entities: false
+    use_entities: true
+- goodbye:
+    use_entities: true
 - affirm:
-    use_entities: false
+    use_entities: true
 - deny:
-    use_entities: false
+    use_entities: true
 - mood_great_or_neutral:
-    use_entities: false
+    use_entities: true
 - mood_unhappy:
-    use_entities: false
+    use_entities: true
 entities: []
 slots:
   want_recipe:
@@ -50,6 +52,13 @@ responses:
   - text: Here's today's nutritional fact for the day!
   utter_provide_recipe:
   - text: Recipe placeholder
+  utter_fallback:
+  - text: Sorry, I haven't learnt how to understand that.
+  utter_ask_rephrase:
+  - text: Sorry, I didn't understand that. Could you rephrase?
+  utter_default:
+  - text: Sorry, I haven't learnt how to handle that.
+
 actions:
 - action_check_want_recipe
 - utter_goodbye
@@ -58,5 +67,7 @@ actions:
 - utter_happy
 - utter_provide_recipe
 - utter_want_recipe
+- utter_fallback
+- utter_default
 forms: {}
 e2e_actions: []

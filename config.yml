@@ -25,6 +25,7 @@ pipeline:
 #     threshold: 0.3
 #     ambiguity_threshold: 0.1
 
+
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
@@ -34,7 +35,16 @@ policies:
   - name: MemoizationPolicy
     max_history: 3
   - name: RulePolicy
+    # Confidence threshold for the `core_fallback_action_name` to apply.
+    # The action will apply if no other action was predicted with
+    # a confidence >= core_fallback_threshold
+    core_fallback_threshold: 0.4
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: True
   - name: TEDPolicy
     max_history: 3
     epochs: 100
     constrain_similarities: true
+
+
+  
