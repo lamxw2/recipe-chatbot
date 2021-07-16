@@ -353,3 +353,4 @@ rasa.db
 models/
 events.db-shm
 events.db-wal
+results/

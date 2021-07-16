@@ -1,0 +1,127 @@
+version: "2.0"
+nlu:
+- lookup: vegetables
+  examples: |
+    - amaranth leaves
+    - basil
+    - beet greens
+    - bitter melon leaves
+    - bok choy
+    - broccoli
+    - chamnamul
+    - chrysanthemum leaves
+    - chard
+    - cilantro
+    - collards
+    - cress
+    - delion greens
+    - kale
+    - lambsquarters
+    - mustard greens
+    - poke greens
+    - romaine lettuce
+    - spinach
+    - nettles
+    - taro leaves
+    - turnip greens
+    - watercress
+    - calabaza
+    - carrots
+    - red chili peppers
+    - red bell peppers
+    - orange bell peppers
+    - pimento/pimiento
+    - sweet potatoes
+    - tomatoes
+    - 100% tomato juice
+    - acorn squash
+    - butternut squash
+    - kabocha
+    - pumpkin
+    - black beans
+    - black-eyed peas
+    - bayo beans
+    - brown beans
+    - chickpeas
+    - garbanzo beans
+    - cowpeas
+    - edamame
+    - fava beans
+    - kidney beans
+    - lentils
+    - lima beans
+    - mung beans
+    - navy beans
+    - pigeon peas
+    - pink beans
+    - pinto beans
+    - split peas
+    - soybeans
+    - white beans
+    - breadfruit
+    - burdock root
+    - cassava
+    - corn
+    - jicama
+    - lotus root
+    - lima beans
+    - cowpeas
+    - black-eyed peas
+    - green peas
+    - pigeon peas
+    - plantains
+    - white potatoes
+    - salsify
+    - tapioca
+    - taro root
+    - dasheen
+    - yautia
+    - water chestnuts
+    - yam
+    - yucca
+    - artichoke
+    - asparagus
+    - avocado
+    - bamboo shoots
+    - bean sprouts
+    - beets
+    - bitter melon
+    - bitter gourd
+    - balsam pear
+    - broccoflower
+    - Brussels sprouts
+    - cabbage
+    - cactus pads
+    - nopales
+    - cauliflower
+    - celeriac
+    - celery
+    - chayote
+    - mirliton
+    - chives
+    - cucumber
+    - eggplant
+    - fennel bulb
+    - garlic
+    - ginger root
+    - green beans
+    - iceberg lettuce
+    - kohlrabi
+    - leeks
+    - luffa
+    - Chinese okra
+    - mushrooms
+    - okra
+    - onions
+    - green chili peppers
+    - green bell peppers
+    - radicchio
+    - sprouted beans
+    - radish
+    - rutabaga
+    - seaweed
+    - snow peas
+    - summer squash
+    - tomatillos
+    - turnips
+    - winter melons

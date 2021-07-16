@@ -1,0 +1,73 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great_or_neutral:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+entities: []
+slots:
+  want_recipe:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey!
+  - text: Hello!
+  - text: Hi there!
+  utter_greet_follow_up:
+  - text: How are you?
+  - text: How are you doing?
+  - text: How are you today?
+  utter_sympathy:
+  - text: I'm sorry to hear that, I hope your day gets better.
+  utter_happy:
+  - text: I'm glad you're doing fine!
+  - text: That's great!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_want_recipe:
+  - text: Would you like a recipe?
+  utter_ask_meal:
+  - text: What did you have for your meal today?
+  utter_ask_if_liked_meal:
+  - text: Did you enjoy it?
+  utter_nutrition_fact:
+  - text: Here's today's nutritional fact for the day!
+  utter_provide_recipe:
+  - text: Recipe placeholder
+  utter_fallback:
+  - text: Sorry, I haven't learnt how to understand that.
+  utter_ask_rephrase:
+  - text: Sorry, I didn't understand that. Could you rephrase?
+  utter_default:
+  - text: Sorry, I haven't learnt how to handle that.
+
+actions:
+- action_check_want_recipe
+- utter_goodbye
+- utter_greet
+- utter_greet_follow_up
+- utter_happy
+- utter_provide_recipe
+- utter_want_recipe
+- utter_fallback
+- utter_default
+forms: {}
+e2e_actions: []

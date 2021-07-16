@@ -55,12 +55,40 @@ nlu:
     - no thx
     - nah
     - nope
-- intent: healthy_eating
+- intent: mood_great_or_neutral
   examples: |
-    - healthy eating pls
-    - healthy eating
-    - i want to know about healthy eating
-- intent: food_safety
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - fine
+    - im ok
+    - I'm ok
+    - doing fine
+    - good
+- intent: mood_unhappy
   examples: |
-    - food safety
-    - i want to know about food safety
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad

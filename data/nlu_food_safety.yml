@@ -1,0 +1,31 @@
+version: "2.0"
+nlu:
+
+- intent: ask_food_safety_vegetables
+  examples: |
+    - do i need to wash (broccoli)[vegetables]
+    - can i eat (pumpkin)[vegetables] raw?
+    - is peeling (potatoes)[vegetables] necessary
+
+- intent: ask_food_safety_fruits
+  examples: |
+    - do i have to wash (apple)[fruits]
+    - is (banana)[fruits] safe at room temperature
+    - do i have to put (kiwi)[fruits] in the fridge
+
+- intent: ask_food_safety_grains
+  examples: |
+    - i left (rice)[grains] out for 3 hours, is it safe
+    - can i freeze (bread)[grains]
+
+- intent: ask_food_safety_dairy
+  examples: |
+    - is [milk](dairy) safe to consume after 7 days
+    - i left [cheese](dairy) out, is it safe?
+
+- intent: ask_food_safety_proteins
+  examples: |
+     - how to thaw [chicken](proteins)?
+     - how to tell if [pork](proteins) is bad
+     - are my [clams](proteins) fresh
+

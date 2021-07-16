@@ -1,0 +1,85 @@
+version: "2.0"
+nlu:
+- lookup: proteins
+  examples: |
+    - beef
+    - goat
+    - lamb
+    - pork
+    - bear
+    - bison
+    - deer
+    - elk
+    - moose
+    - opossum
+    - rabbit
+    - raccoon
+    - squirrel
+    - chicken
+    - Cornish hens
+    - dove
+    - duck
+    - ostrich
+    - pheasant
+    - quail
+    - goose
+    - turkey
+    - chicken eggs
+    - duck eggs
+    - quail eggs
+    - ostrich eggs
+    - Cod
+    - black sea bass
+    - catfish
+    - crawfish
+    - haddock
+    - hake
+    - plaice
+    - perch
+    - squid
+    - pollock
+    - coley
+    - dab
+    - flounder
+    - red mullet
+    - sole
+    - gurnard
+    - tilapia
+    - whiting
+    - herring
+    - pilchards
+    - salmon
+    - sardines
+    - sprats
+    - trout
+    - mackerel
+    - crab
+    - clams
+    - lobster
+    - oyster
+    - prawns
+    - shrimp
+    - mussels
+    - scallops
+    - squid
+    - langoustine
+    - whey
+    - cultured milk
+    - curds
+    - curd whey
+    - tree nuts
+    - peanuts
+    - nut butter
+    - peanut butter
+    - chia seeds
+    - flax seeds
+    - pumpkin seeds
+    - sesame seeds
+    - sunflower seeds
+    - seed butter
+    - sesame butter
+    - tahini butter
+    - sunflower butter
+    - tofu
+    - tempeh
+    - soy flour

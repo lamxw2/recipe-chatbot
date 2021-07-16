@@ -1,0 +1,51 @@
+version: "2.0"
+nlu:
+- lookup: dairy
+  examples: |
+    - milk
+    - soy milk
+    - buttermilk
+    - yogurt
+    - kefir
+    - frozen yogurt
+    - evaporated milk
+    - milk powder
+    - condensed milk
+    - whole milk
+    - cheese
+    - brie
+    - camembert
+    - cheddar
+    - cottage cheese
+    - colby
+    - edam
+    - feta
+    - fontina
+    - goats cheese
+    - gouda
+    - gruyere
+    - limburger
+    - queso anejo
+    - queso asadero
+    - queso chihuahua
+    - monterey
+    - mozzarella
+    - muenster
+    - parmesan
+    - provolone
+    - ricotta
+    - quark
+    - Swiss cheese
+    - Cream
+    - heavy cream
+    - sour cream
+    - whipped cream
+    - butter
+    - ice-cream
+    - ice cream
+    - ghee
+    - cream cheese
+    - whey
+    - cultured milk
+    - curds
+    - curd whey

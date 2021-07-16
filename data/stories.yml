@@ -1,60 +1,47 @@
 version: "2.0"
 
 stories:
-- story: provide recipe path
-  steps:
-  - checkpoint: provide_recipe
-  - action: utter_provide_recipe
+  - story: inform food safety path
+    steps:
+    - intent: greet
+    - action: utter_introduce
+    - intent: food_safety
+    - action: utter_introduce_food_safety
 
-
-- story: happy neutral path want recipe
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - intent: mood_great_or_neutral
-  - action: utter_happy
-  - action: utter_want_recipe
-  - intent: affirm
-  - slot_was_set:
-    - want_recipe: true
-  - checkpoint: provide_recipe
+  - story: inform healthy eating path
+    steps:
+    - intent: greet
+    - action: utter_introduce
+    - intent: healthy_eating
+    - action: utter_introduce_healthy_eating
+    - action: utter_healthy_eating_veg_intro
+    - action: utter_healthy_eating_fruit_intro
+    - action: utter_healthy_eating_grains_intro
+    - action: utter_healthy_eating_dairy_intro
+    - action: utter_healthy_eating_proteinfoods_intro
+    - action: utter_healthy_eating_oils_intro
   
+  - story: inform vegetables safety path
+    steps:
+    - intent: ask_food_safety_vegetables
+    - action: utter_vegetables_food_safety_storage
   
-- story: happy neutral path dont want recipe
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - intent: mood_great_or_neutral
-  - action: utter_happy
-  - action: utter_want_recipe
-  - intent: deny
-  - slot_was_set:
-    - want_recipe: false
-
-- story: sad path want recipe
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - intent: mood_unhappy
-  - action: utter_sympathy
-  - action: utter_want_recipe
-  - intent: affirm
-  - slot_was_set:
-    - want_recipe: true
-  - checkpoint: provide_recipe
-
-- story: sad path dont want recipe
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - intent: mood_unhappy
-  - action: utter_sympathy
-  - action: utter_want_recipe
-  - intent: deny
-  - slot_was_set:
-    - want_recipe: false
+  - story: inform fruits safety path
+    steps:
+    - intent: ask_food_safety_fruits
+    - action: utter_fruits_food_safety_storage
   
+  - story: inform grains safety path
+    steps:
+    - intent: ask_food_safety_grains
+    - action: utter_grains_food_safety_storage
+  
+  - story: inform dairy safety path
+    steps:
+    - intent: ask_food_safety_dairy
+    - action: utter_dairy_food_safety_storage
+
+  - story: inform proteins safety path
+    steps:
+    - intent: ask_food_safety_proteins
+    - action: utter_proteins_food_safety_storage

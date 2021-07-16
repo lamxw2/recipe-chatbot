@@ -1,0 +1,54 @@
+version: "2.0"
+nlu:
+- lookup: fruits
+  examples: |
+    - Asian pears
+    - bananas
+    - blackberries
+    - blueberries
+    - cranberries
+    - currants
+    - dewberries
+    - huckleberries
+    - kiwifruit
+    - loganberries
+    - mulberries
+    - raspberries
+    - strawberries
+    - calamondin
+    - grapefruit
+    - kumquats
+    - lemons
+    - limes
+    - mandarin oranges
+    - pomelos
+    - tangerines
+    - tangelos
+    - cherries
+    - dates
+    - figs
+    - grapes
+    - guava
+    - jackfruit
+    - lychee
+    - mangoes
+    - melons cantaloupe
+    - casaba
+    - honeydew
+    - watermelon
+    - nectarines
+    - papaya
+    - passion fruit
+    - peaches
+    - pears
+    - persimmons
+    - pineapple
+    - plums
+    - pomegranates
+    - prunes
+    - raisins
+    - rhubarb
+    - sapote
+    - soursop
+    - starfruit
+    - tamarind

@@ -1,0 +1,60 @@
+version: "2.0"
+
+stories:
+- story: provide recipe path
+  steps:
+  - checkpoint: provide_recipe
+  - action: utter_provide_recipe
+
+
+- story: happy neutral path want recipe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet_follow_up
+  - intent: mood_great_or_neutral
+  - action: utter_happy
+  - action: utter_want_recipe
+  - intent: affirm
+  - slot_was_set:
+    - want_recipe: true
+  - checkpoint: provide_recipe
+  
+  
+- story: happy neutral path dont want recipe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet_follow_up
+  - intent: mood_great_or_neutral
+  - action: utter_happy
+  - action: utter_want_recipe
+  - intent: deny
+  - slot_was_set:
+    - want_recipe: false
+
+- story: sad path want recipe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet_follow_up
+  - intent: mood_unhappy
+  - action: utter_sympathy
+  - action: utter_want_recipe
+  - intent: affirm
+  - slot_was_set:
+    - want_recipe: true
+  - checkpoint: provide_recipe
+
+- story: sad path dont want recipe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_greet_follow_up
+  - intent: mood_unhappy
+  - action: utter_sympathy
+  - action: utter_want_recipe
+  - intent: deny
+  - slot_was_set:
+    - want_recipe: false
+  
