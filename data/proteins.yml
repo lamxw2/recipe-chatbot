@@ -2,6 +2,7 @@ version: "2.0"
 nlu:
 - lookup: proteins
   examples: |
+    - meat
     - beef
     - goat
     - lamb
@@ -62,6 +63,9 @@ nlu:
     - mussels
     - scallops
     - squid
+    - seafood
+    - shellfish
+    - fish
     - langoustine
     - whey
     - cultured milk

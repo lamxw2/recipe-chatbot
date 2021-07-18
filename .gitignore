@@ -354,3 +354,5 @@ models/
 events.db-shm
 events.db-wal
 results/
+results_bert/
+results_config123/

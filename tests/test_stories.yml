@@ -2,109 +2,36 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy neutral path want recipe 1
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - user: |
-      good
-    intent: mood_great_or_neutral
-  - action: utter_happy
-  - action: utter_want_recipe
-  - user: |
-      yes
-  - intent: affirm
-  - action: utter_provide_recipe
 
-- story: happy neutral path want recipe 2
+- story: inform food safety peach path
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - user: |
-      great
-    intent: mood_great_or_neutral
-  - action: utter_happy
-  - action: utter_want_recipe
-  - user: |
-      yes
-  - intent: affirm
-  - action: utter_provide_recipe
+      do i have to wash peaches
+    intent: ask_food_safety_fruits
+  - action: utter_storage_safety_fruits
 
-- story: happy neutral path dont want recipe
+- story: inform defrost safety salmon path
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - user: |
-      good
-    intent: mood_great_or_neutral
-  - action: utter_happy
-  - action: utter_want_recipe
-  - user: |
-      no
-  - intent: deny
+      how can i defrost salmon
+    intent: ask_defrost_safety_general
+  - action: utter_defrost_safety_intro
+  - action: utter_defrost_safety_general
+  - action: utter_defrost_safety_conclusion
 
-- story: sad path want recipe 1
+- story: inform defrost safety eggplant path
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_sympathy
-  - action: utter_want_recipe
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_provide_recipe
+      how should i defrost eggplant
+    intent: ask_defrost_safety_general
+  - action: utter_defrost_safety_intro
+  - action: utter_defrost_safety_general
+  - action: utter_defrost_safety_conclusion
 
-- story: sad path dont want recipe
+- story: inform defrost safety cookfromfrozen chicken path
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_sympathy
-  - action: utter_want_recipe
-  - user: |
-      not really
-    intent: deny
+      can i put frozen chicken in the oven
+    intent: ask_defrost_safety_cookfromfrozen
+  - action: utter_defrost_safety_cookfromfrozen
 
-- story: sad path want recipe 2
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - action: utter_greet_follow_up
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_sympathy
-  - action: utter_want_recipe
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_provide_recipe
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye

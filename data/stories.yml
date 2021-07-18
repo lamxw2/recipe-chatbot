@@ -24,24 +24,47 @@ stories:
   - story: inform vegetables safety path
     steps:
     - intent: ask_food_safety_vegetables
-    - action: utter_vegetables_food_safety_storage
+    - action: utter_storage_safety_vegetables
   
   - story: inform fruits safety path
     steps:
     - intent: ask_food_safety_fruits
-    - action: utter_fruits_food_safety_storage
+    - action: utter_storage_safety_fruits
   
   - story: inform grains safety path
     steps:
     - intent: ask_food_safety_grains
-    - action: utter_grains_food_safety_storage
+    - action: utter_storage_safety_grains
   
   - story: inform dairy safety path
     steps:
     - intent: ask_food_safety_dairy
-    - action: utter_dairy_food_safety_storage
+    - action: utter_storage_safety_dairy
 
-  - story: inform proteins safety path
+  - story: inform meat safety path
     steps:
-    - intent: ask_food_safety_proteins
-    - action: utter_proteins_food_safety_storage
+    - intent: ask_food_safety_meat
+    - action: utter_storage_safety_meat
+  
+  - story: inform seafood safety path
+    steps:
+    - intent: ask_food_safety_seafood
+    - action: utter_storage_safety_seafood
+
+  - story: inform defrost safety general path
+    steps:
+    - intent: ask_defrost_safety_general
+    - action: utter_defrost_safety_intro
+    - action: utter_defrost_safety_general
+    - action: utter_defrost_safety_conclusion
+  
+  - story: inform defrost safety meat path
+    steps:
+    - intent: ask_defrost_safety_meat
+    - action: utter_defrost_safety_meat
+    - action: utter_defrost_safety_conclusion
+  
+  - story: inform defrost safety cook from frozen path
+    steps:
+    - intent: ask_defrost_safety_cookfromfrozen
+    - action: utter_defrost_safety_cookfromfrozen

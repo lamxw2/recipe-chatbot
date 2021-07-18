@@ -8,6 +8,7 @@ pipeline:
     case_sensitive: False
   - name: LexicalSyntacticFeaturizer
   - name: LanguageModelFeaturizer
+    model_name: "xlnet"
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
