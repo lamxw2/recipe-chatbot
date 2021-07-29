@@ -7,6 +7,11 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: Suggest recipes anytime the user asks for a recipe
+  steps:
+  - intent: ask_recipe
+  - action: action_retrieve_recipes
+
 - rule: Inform the user the chatbot did not understand them
   steps:
   - intent: nlu_fallback

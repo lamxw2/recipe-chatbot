@@ -64,3 +64,17 @@ nlu:
   examples: |
     - food safety
     - i want to know about food safety
+- intent: ask_recipe
+  examples: |
+    - suggest me a recipe with [beef]{"entity": "proteins", "value": "beef"}
+    - can you tell me how to make [soup]{"entity": "dish_categories", "value": "soup"}?
+    - give me a recipe with [chicken]{"entity": "proteins", "value": "chicken"}
+    - i want to make {"entity": "cuisine", "value": "asian"} food
+    - tell me how to make [tacos]{"entity": "dish_categories", "value": "tacos"}
+    - i want a [snack]{"entity": "dish_categories", "value": "snack"}
+    - how can i make [japanese]{"entity": "cuisine", "value": "japanese"} dishes?
+    - what can i make with [potatoes]{"entity": "vegetables", "value": "potatoes")?
+    - how can i make an [indian]{"entity": "cuisine", "value": "indian"} dish
+    - i want a [sandwich]{"entity": "dish_categories", "value": "sandwich"}
+    - tell me a recipe for [cookies]{"entity": "dish_categories", "value": "cookies"}
+    - i want to eat healthily. recommend me a [salad]{"entity": "dish_categories", "value": "salad"}

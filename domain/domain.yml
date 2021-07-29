@@ -1,0 +1,46 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: false
+- goodbye:
+    use_entities: false
+- affirm:
+    use_entities: false
+- deny:
+    use_entities: false
+- ask_recipe:
+    use_entities: true
+
+actions:
+  - action_retrieve_recipes
+
+entities:
+  - dairy
+  - fruits
+  - grains
+  - proteins
+  - vegetables
+  - cuisine
+  - dish_categories
+
+responses:
+  utter_introduce:
+    - text: > 
+        Hi! I'm ____. 
+        I can chat about healthy eating habits and dietary information, suggest recipes, 
+        provide suggestions on how to improve your current meals, or inform about food safety. 
+        \n \n
+        What would you like to talk about?
+  utter_goodbye:
+    - text: Bye
+  utter_fallback:
+    - text: Sorry, I haven't learnt how to understand that.
+  utter_ask_rephrase:
+    - text: Sorry, I didn't understand that. Could you rephrase?
+  utter_default:
+    - text: Sorry, I haven't learnt how to handle that.

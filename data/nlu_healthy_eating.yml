@@ -1,0 +1,49 @@
+version: "2.0"
+nlu:
+
+- intent: ask_healthy_eating_basic/vegetables
+  examples: |
+    - how much [vegetables]{"entity": "vegetables", "value": "vegetables"} should i be eating
+    - how much [vegetables]{"entity": "vegetables", "value": "vegetables"} should i eat a day
+
+
+- intent: ask_healthy_eating_basic/fruits
+  examples: |
+    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
+
+- intent: ask_healthy_eating_basic/dairy
+  examples: |
+    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
+
+- intent: ask_healthy_eating_basic/grains
+  examples: |
+    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
+
+- intent: ask_healthy_eating_basic/proteins
+  examples: |
+    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
+
+- intent: ask_healthy_eating_examples/vegetables
+  examples: |
+    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
+    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
+
+- intent: ask_healthy_eating_examples/fruits
+  examples: |
+    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
+    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
+
+- intent: ask_healthy_eating_examples/dairy
+  examples: |
+    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
+    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
+
+- intent: ask_healthy_eating_examples/grains
+  examples: |
+    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
+    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
+
+- intent: ask_healthy_eating_examples/proteins
+  examples: |
+    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
+    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious

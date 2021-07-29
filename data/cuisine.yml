@@ -1,0 +1,64 @@
+version: "2.0"
+nlu:
+- lookup: cuisine
+  examples: |
+    - italian
+    - chinese
+    - american
+    - pakistani
+    - japanese
+    - caribbean
+    - indian
+    - mexican
+    - latin 
+    - cuban
+    - dominican
+    - puerto rican
+    - south american
+    - central american
+    - korean
+    - turkish
+    - african
+    - spanish
+    - greek
+    - continental
+    - brazilian
+    - mediterranean
+    - thai
+    - asian
+    - russian
+    - vietnamese
+    - cambodian
+    - malaysian
+    - peruvian
+    - tex-mex
+    - irish
+    - french
+    - german
+    - middle eastern
+    - australian
+    - bangladeshi
+    - creole
+    - english
+    - hawaiian
+    - scandinavian
+    - filipino
+    - californian
+    - polish
+    - barbecue
+    - afghan
+    - eastern european
+    - cajun
+    - chilean
+    - indonesian
+    - egyptian
+    - moroccan
+    - ethiopian
+    - southwestern
+    - armenian
+    - portuguese
+    - iranian
+    - polynesian
+    - czech
+    - jamaican
+    - british

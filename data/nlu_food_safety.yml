@@ -3,70 +3,70 @@ nlu:
 
 - intent: ask_food_safety_vegetables
   examples: |
-    - do i need to wash (broccoli)[vegetables]
-    - can i eat (pumpkin)[vegetables] raw?
-    - is peeling (potatoes)[vegetables] necessary
-    - how to prepare (mushrooms)[vegetables]?
-    - how should i clean (vegetables)[vegetables]?
-    - how can i clean (cabbage)[vegetables]
-    - is it safe to cut (lettuce)[vegetables] with a knife
-    - do i need to clean (beets)[vegetables] before using to cook?
-    - should i boil (cauliflower)[vegetables] before eating or can i eat it raw?
-    - how do i tell if (onions)[vegetables] are too old to eat?
-    - does eating too much (carrots)[vegetables] affect my health?
+    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
+    - can i eat [pumpkin]{"entity": "vegetables", "value": "pumpkin"} raw?
+    - is peeling [potatoes]{"entity": "vegetables", "value": "potatoes"} necessary
+    - how to prepare [mushrooms]{"entity": "vegetables", "value": "mushrooms"}?
+    - how should i clean [vegetables]{"entity": "vegetables", "value": "vegetables"}?
+    - how can i clean [cabbage]{"entity": "vegetables", "value": "cabbage"}
+    - is it safe to cut [lettuce]{"entity": "vegetables", "value": "lettuce"} with a knife
+    - do i need to clean [beets]{"entity": "vegetables", "value": "beets"} before using to cook?
+    - should i boil [cauliflower]{"entity": "vegetables", "value": "cauliflower"} before eating or can i eat it raw?
+    - how do i tell if [onions]{"entity": "vegetables", "value": "onions"} are too old to eat?
+    - does eating too much [carrots]{"entity": "vegetables", "value": "carrots"} affect my health?
 
 - intent: ask_food_safety_fruits
   examples: |
-    - do i have to wash (apple)[fruits]
-    - is (banana)[fruits] safe at room temperature
-    - do i have to put (kiwi)[fruits] in the fridge
-    - should i peel (apples)[fruits]
+    - do i have to wash [apple]{"entity": "fruits", "value": "apple"}
+    - is [banana]{"entity": "fruits", "value": "banana"} safe at room temperature
+    - do i have to put [kiwi]{"entity": "fruits", "value": "kiwi"} in the fridge
+    - should i peel [apples]{"entity": "fruits", "value": "apples"}
 
 - intent: ask_food_safety_grains
   examples: |
-    - i left (rice)[grains] out for 3 hours, is it safe
-    - can i freeze (bread)[grains]
-    - should i wash (rice)[grains]?
-    - how to store (rice)[grains]
+    - i left [rice]{"entity": "grains", "value": "rice"} out for 3 hours, is it safe
+    - can i freeze [bread]{"entity": "grains", "value": "bread"}
+    - should i wash [rice]{"entity": "grains", "value": "rice"}?
+    - how to store [rice]{"entity": "grains", "value": "rice"}
 
 - intent: ask_food_safety_dairy
   examples: |
-    - is (milk)[dairy] safe to consume after 7 days
-    - i left (cheese)[dairy] out, is it safe?
+    - is [milk]{"entity": "dairy", "value": "milk"} safe to consume after 7 days
+    - i left [cheese]{"entity": "dairy", "value": "cheese"} out, is it safe?
 
 - intent: ask_food_safety_meat
   examples: |
-    - how to tell if (pork)[proteins] is bad
-    - has my (meat)[proteins] gone off?
+    - how to tell if [pork]{"entity": "proteins", "value": "pork"} is bad
+    - has my [meat]{"entity": "proteins", "value": "meat"} gone off?
 
 - intent: ask_food_safety_seafood
   examples: |
-    - are my (clams)[proteins] fresh
-    - is my (seafood)[proteins] fresh?
-    - is my (fish)[proteins] still good?
+    - are my [clams]{"entity": "proteins", "value": "clams"} fresh
+    - is my [seafood]{"entity": "proteins", "value": "seafood"} fresh?
+    - is my [fish]{"entity": "proteins", "value": "fish"} still good?
 
 - intent: ask_defrost_safety_general
   examples: |
-    - how to thaw (mushrooms)[vegetables]?
-    - how to defrost (strawberries)[fruits]
-    - best way to defrost (bread)[grains]
-    - i dont know how to thaw (rice)[grains]
-    - how should i defrost (salmon)[proteins]?
-    - how can i thaw (oysters)[proteins]
+    - how to thaw [mushrooms]{"entity": "vegetables", "value": "mushrooms"}?
+    - how to defrost [strawberries]{"entity": "fruits", "value": "strawberries"}
+    - best way to defrost [bread]{"entity": "grains", "value": "bread"}
+    - i dont know how to thaw [rice]{"entity": "grains", "value": "rice"}
+    - how should i defrost [salmon]{"entity": "proteins", "value": "salmon"}?
+    - how can i thaw [oysters]{"entity": "proteins", "value": "oysters"}
 
 - intent: ask_defrost_safety_meat
   examples: |
-    - how to thaw (chicken)[proteins]?
-    - how long does it take to thaw (chicken)[proteins]?
-    - how to defrost (turkey)[proteins] quickly
-    - help i forgot to thaw (meat)[proteins]
+    - how to thaw [chicken]{"entity": "proteins", "value": "chicken"}?
+    - how long does it take to thaw [duck]{"entity": "proteins", "value": "duck"}?
+    - how to defrost [turkey]{"entity": "proteins", "value": "turkey"} quickly
+    - help i forgot to thaw [meat]{"entity": "proteins", "value": "meat"}
 
 - intent: ask_defrost_safety_cookfromfrozen
   examples: |
-    - can i cook (seafood)[proteins] without defrosting?
-    - can i cook (pork)[proteins] from frozen?
-    - can i cook frozen (peppers)[vegetables] without thawing?
-    - is it ok to put frozen (meat)[proteins] in the oven
-    - is it fine to steam (fish)[proteins] without thawing
-    - can i grill frozen (fish)[proteins]
-    - is it safe to steam frozen (broccoli)[vegetables]
+    - can i cook [seafood]{"entity": "proteins", "value": "seafood"} without defrosting?
+    - can i cook [pork]{"entity": "proteins", "value": "pork"} from frozen?
+    - can i cook frozen [peppers]{"entity": "vegetables", "value": "peppers"} without thawing?
+    - is it ok to put frozen [meat]{"entity": "proteins", "value": "meat"} in the oven
+    - is it fine to steam [fish]{"entity": "proteins", "value": "fish"} without thawing
+    - can i grill frozen [fish]{"entity": "proteins", "value": "fish"}
+    - is it safe to steam frozen [broccoli]{"entity": "vegetables", "value": "broccoli"}
