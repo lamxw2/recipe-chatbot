@@ -6,6 +6,7 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
+from mmap import ACCESS_DEFAULT
 import pandas as pd
 import numpy as np
 import logging
@@ -113,6 +114,13 @@ class ActionInformHealthyEating(Action):
 
     logging.basicConfig(level=logging.DEBUG)
     
+    global dairy_df, fruit_df, grains_df, proteins_df, veg_df
+    dairy_df = pd.read_pickle('data/datasets/dairy_dataset.pkl')
+    fruit_df = pd.read_pickle('data/datasets/fruit_dataset.pkl')
+    grains_df = pd.read_pickle('data/datasets/grains_dataset.pkl')
+    proteins_df = pd.read_pickle('data/datasets/proteins_dataset.pkl')
+    veg_df = pd.read_pickle('data/datasets/veg_dataset.pkl')
+    
     # Informative messages for basic healthy eating knowledge
     def basic_inform_by_foodgroup(self, entity_foodgroup):
 
@@ -206,7 +214,9 @@ class ActionInformHealthyEating(Action):
         return basic_info_messages
 
     # Informative messages of examples of each food group
-    def examples_by_foodgroup(self, entity_foodgroup):
+    # @entity_foodgroup - food group
+    # @entity_fooditem - specific food item, aka entity value
+    def examples_by_foodgroup(self, entity_foodgroup, entity_fooditem):
         
         example_messages = []
 
@@ -214,6 +224,7 @@ class ActionInformHealthyEating(Action):
 
             if entity_foodgroup == "dairy":
                 
+                if 
                 basic_info_messages.append(dairy_2nd) 
 
             elif entity_foodgroup == "fruits":
@@ -239,6 +250,93 @@ class ActionInformHealthyEating(Action):
         
         return example_messages
 
+    def get_result(self, entity_foodgroup, entity_fooditem):
+
+        df = None
+        unhealthy_message = None
+        error_message = None
+
+        if entity_foodgroup == "dairy":
+
+            # If user asks for list of dairy food
+            if entity_fooditem == "dairy":
+                # Every food that is healthy
+                df = dairy_df[~dairy_df['sub_group'].str.contains('unhealthy', case=False)]
+            
+            # If user asks about specific dairy food
+            else:
+
+                # If food item is unhealthy (subgroup == unhealthy)
+                if list(dairy_df.loc[dairy_df['name'].str.contains(entity_fooditem), 'sub_group'].str.lower())[0] == 'unhealthy':
+                    unhealthy_message = f"{entity_fooditem} is not a healthy source of dairy!"
+
+                else:        
+                    df = dairy_df[(dairy_df['name'].str.contains(entity_fooditem, case=False)
+                    | dairy_df['sub_group'].str.contains(entity_fooditem, case=False))
+                    & ~dairy_df['sub_group'].str.contains('unhealthy', case=False)] # Excludes 'unhealthy'
+            
+
+        elif entity_foodgroup == "fruit":
+            # Maybe split into fruit subgroups tmr
+            df = fruit_df['name']
+        
+        elif entity_foodgroup == "grains":
+            
+            sub_groups = ['whole-grains', 'whole grains', 'whole-grain', 'whole grain'
+                        'refined-grains', 'refined grains', 'refined-grain', 'refined grain'
+                        'processed-grains', 'processed grains', 'processed grain', 'processed-grain']
+
+            for subgroup in sub_groups:
+
+                # If asking for sub-group only
+                if subgroup in entity_fooditem:
+                    df = grains_df[grains_df[('sub_group')].str.contains(entity_fooditem, case=False)]
+                
+                # If asking if specific grain food is part of a subgroup
+                else:
+
+                    sub_group = list(grains_df.loc[grains_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                    df = grains_df[grains_df['sub_group'].str.contains(sub_group, case=False)]
+
+        elif entity_foodgroup == "proteins":
+
+            subgroup_bool = False
+
+            sub_groups = ['red meat', 'poultry', 'seafood', 'white fish', 'oily fish',
+                        'shellfish', 'nuts', 'seeds', 'soy', 'vegetarian', 'seafood'] 
+                        
+            # Listing examples in each subgroup
+            for subgroup in sub_groups:
+
+                if entity_fooditem.lower() == subgroup:
+                    df = proteins_df[proteins_df[('sub_group')].str.contains(entity_fooditem, case=False)]
+            
+                else:
+                    sub_group = list(proteins_df.loc[proteins_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                    df = proteins_df[proteins_df['sub_group'].str.contains(sub_group, case=False)]
+
+        
+        elif entity_foodgroup == "vegetables":
+        
+            sub_groups = ['dark-green', 'dark green', 'red and orange', 'pulses', 'beans', 'lentils', 'starchy', 'others']
+
+            for subgroup in sub_groups:
+
+                # If asking for sub-group only
+                if subgroup in entity_fooditem:
+                    df = veg_df[veg_df[('sub_group')].str.contains(entity_fooditem, case=False)]
+                
+                # If asking if specific vegetable is part of a subgroup
+                else:
+
+                    sub_group = list(veg_df.loc[veg_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                    df = veg_df[veg_df['sub_group'].str.contains(sub_group, case=False)]
+
+        else:
+            error_message = "Oops! Something went wrong"
+        
+        return df, unhealthy_message, error_message
+
 
     def name(self) -> Text:
         return "action_retrieve_recipes"
@@ -249,16 +347,17 @@ class ActionInformHealthyEating(Action):
 
         entity_foodgroup = ""
         foodgroup = ['dairy', 'fruits', 'grains', 'proteins', 'vegetables']
+        entity_fooditem = None
 
         # Get the food group (entity name)
         for group in foodgroup:
 
             # Go through each food group
-            entity_value = next(tracker.get_latest_entity_values(group), None)
-            logging.info(f"Food: {entity_value}")
+            entity_fooditem = next(tracker.get_latest_entity_values(group), None)
+            logging.info(f"Food: {entity_fooditem}")
 
             # When food group is identified
-            if entity_value is not None:
+            if entity_fooditem is not None:
                 entity_foodgroup = group
                 break
         
@@ -273,8 +372,10 @@ class ActionInformHealthyEating(Action):
         # If user asks about examples of healthy food
         elif intent.contains("ask_healthy_eating_examples") and entity_foodgroup != "":
             
-            example_info_messages = self.examples_by_foodgroup(entity_foodgroup)
+            example_info_messages = self.examples_by_foodgroup(entity_foodgroup, entity_fooditem)
 
+            # Add that vegetables can be eaten fresh, frozen or canned
+            # Fruit can be eaten fresh, frozen or canned in 100% juice
             for message in example_info_messages:
                 dispatcher.utter_message(message)
             
