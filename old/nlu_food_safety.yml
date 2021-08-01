@@ -1,5 +1,9 @@
 version: "2.0"
 nlu:
+- intent: ask_food_safety
+  examples: |
+    - tell me about food safety
+    - food safety
 
 - intent: ask_food_safety_vegetables
   examples: |

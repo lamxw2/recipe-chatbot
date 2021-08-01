@@ -12,6 +12,16 @@ rules:
   - intent: ask_recipe
   - action: action_retrieve_recipes
 
+- rule: inform healthy eating basic path
+  steps:
+  - intent: ask_healthy_eating_basic
+  - action: action_inform_healthy_eating_basic
+
+- rule: inform healthy eating examples path
+  steps:
+  - intent: ask_healthy_eating_examples
+  - action: action_inform_healthy_eating_examples
+
 - rule: Inform the user the chatbot did not understand them
   steps:
   - intent: nlu_fallback

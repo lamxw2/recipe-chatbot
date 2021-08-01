@@ -20,6 +20,12 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
+    retrieval_intent: ask_healthy_eating_basic
+    constrain_similarities: true
+    model_confidence: linear_norm
+  - name: ResponseSelector
+    epochs: 100
+    retrieval_intent: ask_healthy_eating_examples
     constrain_similarities: true
     model_confidence: linear_norm
   - name: FallbackClassifier

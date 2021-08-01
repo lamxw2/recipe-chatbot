@@ -5,22 +5,80 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ask_food_safety:
+    use_entities: false
 - ask_food_safety_vegetables:
-    use_entities: true
+    use_entities:
+      - vegetables
+    ignore_entities:
+      - cuisine
+      - dairy
+      - dish_categories
+      - fruits
+      - grains
+      - proteins
 - ask_food_safety_fruits:
-    use_entities: true
+    use_entities:
+      - fruits
+    ignore_entities:
+      - cuisine
+      - dairy
+      - dish_categories
+      - vegetables
+      - grains
+      - proteins
 - ask_food_safety_grains:
-    use_entities: true
+    use_entities:
+      - proteins
+    ignore_entities:
+      - cuisine
+      - fruits
+      - dish_categories
+      - vegetables
+      - dairy
+      - grains
 - ask_food_safety_dairy:
-    use_entities: true
+    use_entities:
+      - dairy
+    ignore_entities:
+      - cuisine
+      - fruits
+      - dish_categories
+      - vegetables
+      - grains
+      - proteins
 - ask_food_safety_meat:
-    use_entities: true
+    use_entities:
+      - proteins
+    ignore_entities:
+      - cuisine
+      - fruits
+      - dish_categories
+      - vegetables
+      - dairy
+      - grains
 - ask_food_safety_seafood:
-    use_entities: true
+    use_entities:
+      - proteins
+    ignore_entities:
+      - cuisine
+      - fruits
+      - dish_categories
+      - vegetables
+      - dairy
+      - grains
 - ask_defrost_safety_general:
     use_entities: true
 - ask_defrost_safety_meat:
-    use_entities: true
+    use_entities:
+      - proteins
+    ignore_entities:
+      - cuisine
+      - fruits
+      - dish_categories
+      - vegetables
+      - dairy
+      - grains
 - ask_defrost_safety_cookfromfrozen:
     use_entities: true
 

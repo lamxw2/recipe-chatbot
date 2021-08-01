@@ -55,15 +55,6 @@ nlu:
     - no thx
     - nah
     - nope
-- intent: healthy_eating
-  examples: |
-    - healthy eating pls
-    - healthy eating
-    - i want to know about healthy eating
-- intent: food_safety
-  examples: |
-    - food safety
-    - i want to know about food safety
 - intent: ask_recipe
   examples: |
     - suggest me a recipe with [beef]{"entity": "proteins", "value": "beef"}

@@ -1,49 +1,67 @@
 version: "2.0"
 nlu:
 
-- intent: ask_healthy_eating_basic/vegetables
+- intent: ask_healthy_eating_basic
   examples: |
     - how much [vegetables]{"entity": "vegetables", "value": "vegetables"} should i be eating
-    - how much [vegetables]{"entity": "vegetables", "value": "vegetables"} should i eat a day
+    - how much [meat]{"entity": "proteins", "value": "meat"} should i eat a day
+    - i barely have any [apples]{"entity": "fruits", "value": "apples"} in my diet. do i need to add more fruit?
+    - what amount of [fruits]{"entity": "fruits", "value": "fruits"} do i need daily?
+    - are [whole grains]{"entity": "grains", "value": "whole grains"} necessary on a daily basis?
+    - should i eat [seafood]{"entity": "proteins", "value": "seafood"} daily?
+    - i don't eat [bananas]{"entity": "fruits", "value": "bananas"}. should i eat them?
+    - do i have to eat [poultry]{"entity": "proteins", "value": "poultry"} on a daily basis?
+    - do i really have to eat [fruits]{"entity": "fruits", "value": "fruits"} daily?
+    - what is a balanced diet?
+    - what does a balanced diet consist of?
+    - what is a healthy meal?
+    - how should i eat healthily?
+    - i don't know how to eat healthily
+    - what are the different types of [seafood]{"entity": "proteins", "value": "seafood"}
+    - is [fish]{"entity": "proteins", "value": "fish"} necessary? i dislike fish
+    - how much [milk]{"entity": "dairy", "value": "milk"} should i drink a day
+    - i barely consume [dairy]{"entity": "dairy", "value": "dairy"}. do i need to drink more milk?
+    - is [dairy]{"entity": "dairy", "value": "dairy"} important?
+    - how important is it to eat [yogurt]{"entity": "dairy", "value": "yogurt"} daily?
+    - i don't like [whole-grain bread]{"entity": "grains", "value": "whole-grain bread"}. do i really have to eat it?
+    - are [whole grains]{"entity": "grains", "value": "whole grains"} necessary?
+    - is there a limit to how many [eggs]{"entity": "proteins", "value": "eggs"} i can eat in a day?
+    - is there such a thing as too much [red meat]{"entity": "proteins", "value": "red meat"}?
+    - what is the right amount of [vegetables]{"entity": "vegetables", "value": "vegetables"} i should eat?
+    - what is the recommended amount of [dairy]{"entity": "dairy", "value": "dairy"} to eat?
+    - what is a good amount of [fruits]{"entity": "fruits", "value": "fruits"} to be eating?
+    - how much [dairy]{"entity": "dairy", "value": "dairy"} should i have on a daily basis?
 
-
-- intent: ask_healthy_eating_basic/fruits
+- intent: ask_healthy_eating_examples
   examples: |
-    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
-
-- intent: ask_healthy_eating_basic/dairy
-  examples: |
-    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
-
-- intent: ask_healthy_eating_basic/grains
-  examples: |
-    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
-
-- intent: ask_healthy_eating_basic/proteins
-  examples: |
-    - do i need to wash [broccoli]{"entity": "vegetables", "value": "broccoli"}
-
-- intent: ask_healthy_eating_examples/vegetables
-  examples: |
-    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
-    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
-
-- intent: ask_healthy_eating_examples/fruits
-  examples: |
-    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
-    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
-
-- intent: ask_healthy_eating_examples/dairy
-  examples: |
-    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
-    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
-
-- intent: ask_healthy_eating_examples/grains
-  examples: |
-    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
-    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
-
-- intent: ask_healthy_eating_examples/proteins
-  examples: |
-    - what are examples of [vegetables]{"entity": "vegetables", "value": "vegetables"}
-    - what type of [vegetables]{"entity": "vegetables", "value": "vegetables"} are nutritious
+    - what are examples of [dark green]{"entity": "vegetables", "value": "dark green"} vegetables
+    - is [broccoli]{"entity": "vegetables", "value": "broccoli"} a dark-green vegetable?
+    - what kind of vegetable is [carrot]{"entity": "vegetables", "value": "carrot"}
+    - what type of vegetables are [potatoes]{"entity": "vegetables", "value": "potatoes"}
+    - are [green peas]{"entity": "vegetables", "value": "green peas"} healthy?
+    - what are other kinds of [citrus]{"entity": "fruits", "value": "citrus"} fruits
+    - what fruit is [watermelon]{"entity": "fruits", "value": "watermelon"}
+    - what type of fruits are [pineapples]{"entity": "fruits", "value": "pineapples"}
+    - is [honeydew]{"entity": "fruits", "value": "honeydew"} a melon?
+    - what are examples of healthy [cheese]{"entity": "dairy", "value": "cheese"}
+    - is [soy milk]{"entity": "dairy", "value": "soy milk]"} a source of dairy?
+    - can i have [condensed milk]{"entity": "dairy", "value": "condensed milk"} instead of milk?
+    - is [cream]{"entity": "dairy", "value": "cream"} unhealthy?
+    - is [ice cream]{"entity": "dairy", "value": "ice cream"} healthy?
+    - what are some kinds of healthy [cheeses]{"entity": "dairy", "value": "cheeses"}?
+    - is [ghee]{"entity": "dairy", "value": "ghee"} dairy?
+    - is [barley]{"entity": "grains", "value": "barley"} a type of grain?
+    - what kind of grains is [masa]{"entity": "grains", "value": "masa"}
+    - what type of grains are [crackers]{"entity": "grains", "value": "crackers"}
+    - is [pasta]{"entity": "grains", "value": "pasta"} a healthy grain?
+    - what is [red meat]{"entity": "proteins", "value": "red meat"}?
+    - what type of [meat]{"entity": "proteins", "value": "meat"} are nutritious?
+    - what kind of [rice]{"entity": "grains", "value": "rice"} should i buy?
+    - i need help deciding what kind of [red and orange]{"entity": "vegetables", "value": "dark green"} veggies to get
+    - is [salmon]{"entity": "proteins", "value": "salmon"} an oily fish?
+    - what kind of seafood is [oyster]{"entity": "proteins", "value": "oyster"}
+    - what type of meat is [chicken]{"entity": "proteins", "value": "chicken"}
+    - are [eggs]{"entity": "proteins", "value": "eggs"} healthy?
+    - is [cod]{"entity": "proteins", "value": "cod"} a white fish?
+    - what [berries]{"entity": "fruits", "value": "berries"} should i buy?
+    - what are some things that are [carbohydrates]{"entity": "grains", "value": "carbohydrates"}?

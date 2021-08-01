@@ -5,57 +5,26 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- ask_healthy_eating_basic/vegetables:
+- ask_healthy_eating_basic:
     use_entities:
       - vegetables
-    ignore_entities:
-      - cuisine
-      - dairy
-      - dish_categories
       - fruits
-      - grains
-      - proteins
-- ask_healthy_eating_basic/fruits:
-    use_entities:
-      - fruits
-    ignore_entities:
-      - cuisine
       - dairy
-      - dish_categories
-      - vegetables
-      - grains
       - proteins
-- ask_healthy_eating_basic/dairy:
-    use_entities:
-      - dairy
-    ignore_entities:
-      - cuisine
-      - fruits
-      - dish_categories
-      - vegetables
-      - grains
-      - proteins
-- ask_healthy_eating_basic/grains:
-    use_entities:
       - grains
     ignore_entities:
       - cuisine
-      - fruits
       - dish_categories
+- ask_healthy_eating_examples:
+    use_entities:
       - vegetables
+      - fruits
       - dairy
       - proteins
-- ask_healthy_eating_basic/proteins:
-    use_entities:
-      - proteins
+      - grains
     ignore_entities:
       - cuisine
-      - fruits
       - dish_categories
-      - vegetables
-      - dairy
-      - grains
-- ask_healthy_eating_examples/vegetables
 
 entities:
   - dairy
@@ -66,52 +35,6 @@ entities:
   - cuisine
   - dish_categories
 
-responses:
-
-  utter_introduce_healthy_eating:
-    - text: Food can be categorized into 6 core groups - vegetables, fruits, grains, dairy, protein foods and oils.
-  utter_healthy_eating_veg_intro:
-    - text: |
-        Vegetables can be further categorized into 6 subgroups - dark-green, red and orange,  
-        beans, peas and lentils (pulses), starchy, and others.  
-        \n
-        Most adults should consume between 2-4 cups equivalent, or as part of their 5 a day,  
-        with each portion being 80g.
-  utter_healthy_eating_fruit_intro:
-    - text: > 
-        You should eat between 1.5-2.5 cups equivalent or as part of your 5 a day. \ 
-        Just like with vegetables, with each portion of fruit is 80g.  \ 
-        100% fruit juice counts as 1 of 5 a day, but limited to only 150ml each day.
-  utter_healthy_eating_grains_intro:
-    - text: > 
-        At least half of your daily grain intake should be whole grain. \ 
-        Aim to have 5-10 ounces of grains a day!
-  utter_healthy_eating_dairy_intro:
-    - text: > 
-        Milk, yoghurt, cheese (including lactose-free versions), \
-        fortified soy beverages and yoghurt are considered dairy products. \n
-        You should have 3 cups equivalent of dairy a day.
-  utter_healthy_eating_proteinfoods_intro:
-    - text: > 
-        Protein foods can be further categorized into 4 subgroups -  \ 
-        lean meat, poultry, eggs; seafood; beans, peas and lentils (pulses); nuts, seeds and soy products. \n
-        You should be consuming 5-7 ounces of protein foods a day. \n 
-        At least 2 portions of fish should be eaten every week, \ 
-        and 1 portion should be an oily fish (e.g. salmon, mackerel). \n 
-        A portion is around 140g (4.9oz). \ 
-        However, you should not exceed 90g of red meat in a day! \n
-        The recommended guideline is 70g a day. \n
-        90g of red meat is equivalent to three thinly cut slices of beef, lamb or pork, \ 
-        where each slice is about the size of half a piece of sliced bread. \n
-        A cooked breakfast containing two typical British sausages and two rashers of bacon is equivalent to 130g.
-  utter_healthy_eating_oils_intro:
-    - text: > 
-        The main types of fat found in food are saturated and unsaturated. \ 
-        Saturated fat is found in animal sources, and unsaturated is found in plant sources. \n
-        Aim to consume more healthy oils such as vegetable oils and oils in food such as seafood and nuts,  \
-        and reduce oil consumption from animal sources!  \n
-        Try not to exceed 22-44g of oil a day.
-
-
-
-  
+actions:
+  - action_inform_healthy_eating_basic
+  - action_inform_healthy_eating_examples

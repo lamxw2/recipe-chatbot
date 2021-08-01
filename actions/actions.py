@@ -109,8 +109,7 @@ class ActionRetrieveRecipes(Action):
 
         return []
 
-# Inform about healthy eating
-class ActionInformHealthyEating(Action):
+class ActionInformHealthyEatingBasic(Action):
 
     logging.basicConfig(level=logging.DEBUG)
     
@@ -120,7 +119,7 @@ class ActionInformHealthyEating(Action):
     grains_df = pd.read_pickle('data/datasets/grains_dataset.pkl')
     proteins_df = pd.read_pickle('data/datasets/proteins_dataset.pkl')
     veg_df = pd.read_pickle('data/datasets/veg_dataset.pkl')
-    
+
     # Informative messages for basic healthy eating knowledge
     def basic_inform_by_foodgroup(self, entity_foodgroup):
 
@@ -212,41 +211,280 @@ class ActionInformHealthyEating(Action):
         # basic_info_messages = []
         
         return basic_info_messages
+    
+    def name(self) -> Text:
+        return "action_inform_healthy_eating_basic"
+    
+    def run(self, dispatcher, tracker, domain):
+        
+        intent = tracker.get_intent_of_latest_message()
+        logging.info(intent)
+
+        entity_foodgroup = None
+        foodgroup = ['dairy', 'fruits', 'grains', 'proteins', 'vegetables']
+        entity_fooditem = None
+
+        # Get the food group (entity name)
+        for group in foodgroup:
+
+            # Go through each food group
+            entity_fooditem = next(tracker.get_latest_entity_values(group), None)
+            logging.info(f"Food: {entity_fooditem}")
+
+            # When food group is identified
+            if entity_fooditem is not None:
+                entity_foodgroup = group
+                break
+        
+        # If user asks about basic healthy eating
+        #if "ask_healthy_eating_basic" in intent and entity_foodgroup is not None:
+        if entity_foodgroup is not None:
+
+            basic_info_messages = self.basic_inform_by_foodgroup(entity_foodgroup)
+
+            for message in basic_info_messages:
+                dispatcher.utter_message(message)
+        
+        elif entity_foodgroup is None:
+
+            example_info_messages = []
+
+            basic_message_1st = "A balanced diet consists of: \n"
+            basic_message_1st += " - at least 5 portions of fruit and vegetables a day\n"
+            basic_message_1st += " - a source of protein, such as meat, eggs or pulses\n"
+            basic_message_1st += " - high-fibre carbohydrates, including whole-grain bread\n"
+            basic_message_1st += " - some dairy, including plant milk fortified with calcium"
+
+            example_info_messages.append(basic_message_1st)
+
+            basic_message_2nd = "Having a balanced diet daily keeps you healthy!"
+            example_info_messages.append(basic_message_2nd)
+
+            for message in example_info_messages:
+                dispatcher.utter_message(message)
+            
+        else:
+            # do something
+            dispatcher.utter_message("Oops! Something went wrong in retrieving basic information.")
+
+        return []
+
+# Inform about healthy eating
+class ActionInformHealthyEatingExamples(Action):
+
+    logging.basicConfig(level=logging.DEBUG)
+    
+    global dairy_df, fruit_df, grains_df, proteins_df, veg_df
+    dairy_df = pd.read_pickle('data/datasets/dairy_dataset.pkl')
+    fruit_df = pd.read_pickle('data/datasets/fruit_dataset.pkl')
+    grains_df = pd.read_pickle('data/datasets/grains_dataset.pkl')
+    proteins_df = pd.read_pickle('data/datasets/proteins_dataset.pkl')
+    veg_df = pd.read_pickle('data/datasets/veg_dataset.pkl')
+
+    # Format list of food examples in a string
+    def format_food_list(self, df):
+
+        # Get names of food items
+        food_list = list(df['name'])
+        # Get plural form of food if applicable
+        food_list = [x.split('/')[0] for x in food_list]
+        # Join list as string and add 'and' right before last food item
+        format_food_list = [str(x) for x in food_list[:-1]]
+        food_examples = ", ".join(format_food_list) + ' and ' + str(food_list[-1] + '.')
+
+        return food_examples
 
     # Informative messages of examples of each food group
     # @entity_foodgroup - food group
     # @entity_fooditem - specific food item, aka entity value
-    def examples_by_foodgroup(self, entity_foodgroup, entity_fooditem):
+    def format_examples_by_foodgroup(self, entity_foodgroup, entity_fooditem):
         
         example_messages = []
+        df, unhealthy_message, error_message = self.get_result(entity_foodgroup, entity_fooditem)
 
-        if entity_foodgroup is not None:
+        # Make sure dataframe isnt empty
+        if ~df.empty:
 
+            # Dairy food group
             if entity_foodgroup == "dairy":
                 
-                if 
-                basic_info_messages.append(dairy_2nd) 
+                # If user asks about other types of dairy food
+                if entity_fooditem == "dairy":
 
+                    food_list = list(df['name'])
+                    format_food_list = [str(n) for n in food_list[:-1]]
+
+                    dairy_1st = "Examples of healthy dairy food include: "
+                    dairy_1st += ", ".join(format_food_list) + ' and ' + str(food_list[-1] + '.')
+                    example_messages.append(dairy_1st)
+                
+                # If user asks about an unhealthy type of dairy food
+                elif unhealthy_message is not None:
+
+                    dairy_1st = unhealthy_message
+                    dairy_1st += " Why not try a low-fat version or a healthier substitute? "
+                    dairy_1st += "Yogurt is a common, tasty substitute for ice-cream and cream cheese!"
+
+                    example_messages.append(dairy_1st)
+                
+                # If user asks about specific dairy food
+                elif (unhealthy_message is None) & (entity_fooditem != "dairy"):
+
+                    sub_group = list(df['sub_group'].unique())[0].lower()
+
+                    food_examples = self.format_food_list(df)
+
+                    dairy_1st = f"{entity_fooditem.capitalize()} is a type of {sub_group}.\n"
+                    dairy_1st += f"Other types of {sub_group}s include: "
+                    dairy_1st += food_examples
+
+                    example_messages.append(dairy_1st)
+
+            # Fruit food group
             elif entity_foodgroup == "fruits":
 
-                fruits_1st = "You should eat between 1.5-2.5 cups equivalent, or as part of your 5 a day! " 
-                
+                sub_groups = ['berries', 'berry', 'citrus', 'melons']
 
+                if "fruit" in entity_fooditem.lower():
+
+                    food_examples = self.format_food_list(df)
+
+                    fruit_1st = f"Examples of {entity_fooditem} include: "
+                    fruit_1st += food_examples
+
+                    example_messages.append(fruit_1st)
+
+                # If asking for sub-group only
+                elif entity_fooditem.lower() in sub_groups:
+
+                    food_examples = self.format_food_list(df)
+
+                    fruit_1st = "You can have fruit in fresh, frozen or canned (in 100% juice)!\n"
+
+                    if entity_fooditem.lower() == "citrus":
+                        fruit_1st += f"Examples of {entity_fooditem} fruit include: "
+                    elif entity_fooditem.lower() == "berry":
+                        fruit_1st += f"Examples of berries include: "
+                    
+                    fruit_1st += food_examples
+
+                    example_messages.append(fruit_1st)
+
+                # If asking if specific fruit is part of a subgroup
+                else:
+
+                    # Get sub-group name
+                    sub_group = list(df['sub_group'].unique())[0].lower() 
+                    # Get food item names under the same sub-group
+                    food_examples = self.format_food_list(df)
+
+                    fruit_1st = f"{entity_fooditem.capitalize()} is a type of {sub_group}.\n"
+
+                    if entity_fooditem.lower() == "citrus":
+                        fruit_1st += f"Other types of {entity_fooditem} fruit include: "
+                    elif entity_fooditem.lower() == "berry":
+                        fruit_1st += f"Other types of berries include: "
+
+                    fruit_1st += food_examples
+                    fruit_1st += "\nYou can have fruit in fresh, frozen or canned (in 100% juice)!"
+
+                    example_messages.append(fruit_1st)
+                
             elif entity_foodgroup == "grains":
                 
-                grains_1st = "At least half of your daily grain intake should be whole grain. " 
-                
+                sub_groups_whole = ['whole-grains', 'whole grains', 'whole-grain', 'whole grain']
+                sub_groups_refined = ['refined-grains', 'refined grains', 'refined-grain', 'refined grain']
+                sub_groups_processed = ['processed-grains', 'processed grains', 'processed grain', 'processed-grain']
 
+                if (("carbohydrate" in entity_fooditem)
+                    or (entity_fooditem in sub_groups_whole) 
+                    or (entity_fooditem in sub_groups_refined) 
+                    or (entity_fooditem in sub_groups_processed)):
+
+                    food_examples = self.format_food_list(df)
+
+                    grains_1st = f"Examples of {entity_fooditem} include: "
+                    grains_1st += food_examples
+
+                    example_messages.append(grains_1st)
+                
+                else:
+
+                    # Get sub-group name
+                    sub_group = list(df['sub_group'].unique())[0].lower()
+                    food_examples = self.format_food_list(df)
+
+                    grains_1st = f"{entity_fooditem.capitalize()} is a type of {sub_group}.\n"
+                    grains_1st += f"Other types of {sub_group} include: "
+                    grains_1st += food_examples
+
+                    example_messages.append(grains_1st)
+                
             elif entity_foodgroup == "proteins":
-                
-                
 
+                sub_groups = ['red meat', 'poultry', 'seafood', 'white fish', 'oily fish',
+                        'shellfish', 'nuts', 'seeds', 'soy', 'vegetarian', 'seafood'] 
+                        
+                # Listing examples in each subgroup
+                if "protein" in entity_fooditem.lower() or entity_fooditem.lower() in sub_groups:
+
+                    food_examples = self.format_food_list(df)
+
+                    proteins_1st = f"Examples of {entity_fooditem} include: "
+                    proteins_1st += food_examples
+
+                    example_messages.append(proteins_1st)
+            
+                # Type of sub-group food item is in
+                else:
+
+                    # Get sub-group name
+                    sub_group = list(df['sub_group'].unique())[0].lower()
+                    food_examples = self.format_food_list(df)
+
+                    proteins_1st = f"{entity_fooditem.capitalize()} is a type of {sub_group}.\n"
+                    proteins_1st += f"Other types of {sub_group} include: "
+                    proteins_1st += food_examples
+
+                    example_messages.append(proteins_1st)
+                
             elif entity_foodgroup == "vegetables":
 
-                
+                sub_groups = ['dark-green', 'dark green', 'red and orange', 'pulses', 'beans', 'lentils', 'starchy', 'others']
 
-        # else return empty list, aka
-        # example_messages = []
+                # If asking for sub-group only
+                if "vegetable" in entity_fooditem.lower() or entity_fooditem.lower() in sub_groups:
+
+                    food_examples = self.format_food_list(df)
+
+                    veg_1st = "Vegetables can be eaten fresh, frozen or canned!\n"
+                    veg_1st += f"Examples of {entity_fooditem} include: "
+                    veg_1st += food_examples
+
+                    example_messages.append(veg_1st)
+
+                # If asking if specific vegetable is part of a subgroup
+                else:
+
+                    # Get sub-group name
+                    sub_group = list(df['sub_group'].unique())[0].lower()
+                    food_examples = self.format_food_list(df)
+
+                    if ((entity_fooditem == "pulses") or (entity_fooditem == "beans")
+                        or (entity_fooditem == "lentils")):
+                        veg_1st = f"{entity_fooditem.capitalize()} is a type of {sub_group}.\n"
+                    else:
+                        veg_1st = f"{entity_fooditem.capitalize()} is a type of {sub_group} vegetable.\n"
+
+                    veg_1st += f"Other types of {sub_group} include: "
+                    veg_1st += food_examples
+                    veg_1st += "\nVegetables can be eaten fresh, frozen or canned!"
+
+                    example_messages.append(veg_1st)
+
+        else:
+        
+            example_messages.append(error_message)
         
         return example_messages
 
@@ -268,84 +506,110 @@ class ActionInformHealthyEating(Action):
 
                 # If food item is unhealthy (subgroup == unhealthy)
                 if list(dairy_df.loc[dairy_df['name'].str.contains(entity_fooditem), 'sub_group'].str.lower())[0] == 'unhealthy':
-                    unhealthy_message = f"{entity_fooditem} is not a healthy source of dairy!"
+                    unhealthy_message = f"{entity_fooditem.capitalize()} is not a healthy source of dairy!"
 
                 else:        
-                    df = dairy_df[(dairy_df['name'].str.contains(entity_fooditem, case=False)
-                    | dairy_df['sub_group'].str.contains(entity_fooditem, case=False))
-                    & ~dairy_df['sub_group'].str.contains('unhealthy', case=False)] # Excludes 'unhealthy'
-            
+                    # Get sub-group
+                    sub_group = list(dairy_df.loc[dairy_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                    # Get all other food items under the same sub-group
+                    df = dairy_df[(dairy_df['sub_group'].str.contains(sub_group, case=False) 
+                    & ~dairy_df['sub_group'].str.contains('unhealthy', case=False))] # Excludes 'unhealthy'
 
         elif entity_foodgroup == "fruit":
-            # Maybe split into fruit subgroups tmr
-            df = fruit_df['name']
+            
+            sub_groups = ['berries', 'citrus', 'melons']
+
+            if "fruit" in entity_fooditem.lower():
+                df = fruit_df
+
+            # If asking for sub-group only
+            elif entity_fooditem.lower() in sub_groups:
+                df = fruit_df[fruit_df[('sub_group')].str.contains(entity_fooditem, case=False)]
+            
+            elif (entity_fooditem.lower() == "berries") or (entity_fooditem.lower() == "berry"):
+                df = fruit_df[fruit_df[('sub_group')].str.contains('berries', case=False)]
+
+            # If asking if specific fruit is part of a subgroup
+            else:
+
+                sub_group = list(fruit_df.loc[fruit_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                df = fruit_df[fruit_df['sub_group'].str.contains(sub_group, case=False)]
         
         elif entity_foodgroup == "grains":
             
-            sub_groups = ['whole-grains', 'whole grains', 'whole-grain', 'whole grain'
-                        'refined-grains', 'refined grains', 'refined-grain', 'refined grain'
-                        'processed-grains', 'processed grains', 'processed grain', 'processed-grain']
+            sub_groups_whole = ['whole-grains', 'whole grains', 'whole-grain', 'whole grain']
+            sub_groups_refined = ['refined-grains', 'refined grains', 'refined-grain', 'refined grain']
+            sub_groups_processed = ['processed-grains', 'processed grains', 'processed grain', 'processed-grain']
 
-            for subgroup in sub_groups:
+            if "carbohydrate" in entity_fooditem.lower():
+                df = grains_df
 
-                # If asking for sub-group only
-                if subgroup in entity_fooditem:
-                    df = grains_df[grains_df[('sub_group')].str.contains(entity_fooditem, case=False)]
-                
-                # If asking if specific grain food is part of a subgroup
-                else:
+            # If asking for sub-group only
+            elif entity_fooditem.lower() in sub_groups_whole:
+                df = grains_df[grains_df[('sub_group')].str.contains('whole grains', case=False)]
 
-                    sub_group = list(grains_df.loc[grains_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
-                    df = grains_df[grains_df['sub_group'].str.contains(sub_group, case=False)]
+            elif entity_fooditem.lower() in sub_groups_refined or entity_fooditem.lower() in sub_groups_processed:
+                df = grains_df[grains_df[('sub_group')].str.contains('refined grains', case=False)]
+
+            # If asking if specific grain food is part of a subgroup
+            else:
+
+                sub_group = list(grains_df.loc[grains_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                df = grains_df[grains_df['sub_group'].str.contains(sub_group, case=False)]
 
         elif entity_foodgroup == "proteins":
 
-            subgroup_bool = False
-
             sub_groups = ['red meat', 'poultry', 'seafood', 'white fish', 'oily fish',
                         'shellfish', 'nuts', 'seeds', 'soy', 'vegetarian', 'seafood'] 
-                        
+
+            if "protein" in entity_fooditem.lower():
+                df = proteins_df
+
             # Listing examples in each subgroup
-            for subgroup in sub_groups:
-
-                if entity_fooditem.lower() == subgroup:
-                    df = proteins_df[proteins_df[('sub_group')].str.contains(entity_fooditem, case=False)]
-            
-                else:
-                    sub_group = list(proteins_df.loc[proteins_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
-                    df = proteins_df[proteins_df['sub_group'].str.contains(sub_group, case=False)]
-
+            elif entity_fooditem.lower() in sub_groups:
+                df = proteins_df[proteins_df[('sub_group')].str.contains(entity_fooditem, case=False)]
         
+            # Type of sub-group food item is in
+            else:
+                sub_group = list(proteins_df.loc[proteins_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                df = proteins_df[proteins_df['sub_group'].str.contains(sub_group, case=False)]
+
         elif entity_foodgroup == "vegetables":
         
             sub_groups = ['dark-green', 'dark green', 'red and orange', 'pulses', 'beans', 'lentils', 'starchy', 'others']
 
-            for subgroup in sub_groups:
+            if "vegetable" in entity_fooditem.lower():
+                df = veg_df
 
-                # If asking for sub-group only
-                if subgroup in entity_fooditem:
-                    df = veg_df[veg_df[('sub_group')].str.contains(entity_fooditem, case=False)]
-                
-                # If asking if specific vegetable is part of a subgroup
+            # If asking for sub-group only
+            elif entity_fooditem.lower() in sub_groups:
+
+                if entity_fooditem.lower() == "dark-green" or entity_fooditem.lower() == 'dark green':
+                    df = veg_df[veg_df[('sub_group')].str.contains('dark green', case=False)]
                 else:
+                    df = veg_df[veg_df[('sub_group')].str.contains(entity_fooditem, case=False)]
 
-                    sub_group = list(veg_df.loc[veg_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
-                    df = veg_df[veg_df['sub_group'].str.contains(sub_group, case=False)]
+            # If asking if specific vegetable is part of a subgroup
+            else:
+
+                sub_group = list(veg_df.loc[veg_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
+                df = veg_df[veg_df['sub_group'].str.contains(sub_group, case=False)]
 
         else:
-            error_message = "Oops! Something went wrong"
+            error_message = "Sorry, I didn't understand that. Try to reword your phrasing please!"
         
         return df, unhealthy_message, error_message
 
 
     def name(self) -> Text:
-        return "action_retrieve_recipes"
+        return "action_inform_healthy_eating_examples"
     
     def run(self, dispatcher, tracker, domain):
         
-        intent = tracker.get_intent_of_latest_message
+        intent = tracker.get_intent_of_latest_message()
+        logging.info(intent)
 
-        entity_foodgroup = ""
+        entity_foodgroup = None
         foodgroup = ['dairy', 'fruits', 'grains', 'proteins', 'vegetables']
         entity_fooditem = None
 
@@ -361,24 +625,16 @@ class ActionInformHealthyEating(Action):
                 entity_foodgroup = group
                 break
         
-        # If user asks about basic healthy eating
-        if intent.contains("ask_healthy_eating_basic") and entity_foodgroup != "":
-            
-            basic_info_messages = self.basic_inform_by_foodgroup(entity_foodgroup)
-
-            for message in basic_info_messages:
-                dispatcher.utter_message(message)
+        logging.info(type(intent))
 
         # If user asks about examples of healthy food
-        elif intent.contains("ask_healthy_eating_examples") and entity_foodgroup != "":
-            
-            example_info_messages = self.examples_by_foodgroup(entity_foodgroup, entity_fooditem)
+        # if "ask_healthy_eating_examples" in intent and entity_foodgroup is not None:
+        if entity_foodgroup is not None:
+            example_info_messages = self.format_examples_by_foodgroup(entity_foodgroup, entity_fooditem)
 
-            # Add that vegetables can be eaten fresh, frozen or canned
-            # Fruit can be eaten fresh, frozen or canned in 100% juice
             for message in example_info_messages:
                 dispatcher.utter_message(message)
-            
+
         else:
             # do something
             dispatcher.utter_message("Oops! Something went wrong.")
