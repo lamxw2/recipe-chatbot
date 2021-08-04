@@ -3,35 +3,100 @@
 
 stories:
 
-- story: inform food safety peach path
+- story: greet path
   steps:
   - user: |
-      do i have to wash peaches
-    intent: ask_food_safety_fruits
-  - action: utter_storage_safety_fruits
+      hello
+    intent: greet
+  - action: utter_introduce
 
-- story: inform defrost safety salmon path
+- story: provide recipes with 1 ingredient path
   steps:
   - user: |
-      how can i defrost salmon
-    intent: ask_defrost_safety_general
-  - action: utter_defrost_safety_intro
-  - action: utter_defrost_safety_general
-  - action: utter_defrost_safety_conclusion
+      How can I make [chicken](proteins) soup?
+    intent: ask_recipe
+  - action: action_retrieve_recipes
 
-- story: inform defrost safety eggplant path
+- story: provide recipes with 2 entities path
   steps:
   - user: |
-      how should i defrost eggplant
-    intent: ask_defrost_safety_general
-  - action: utter_defrost_safety_intro
-  - action: utter_defrost_safety_general
-  - action: utter_defrost_safety_conclusion
+      Give me a recipe for pork taco
+    intent: ask_recipe
+  - action: action_retrieve_recipes
 
-- story: inform defrost safety cookfromfrozen chicken path
+- story: inform about healthy eating path
   steps:
   - user: |
-      can i put frozen chicken in the oven
-    intent: ask_defrost_safety_cookfromfrozen
-  - action: utter_defrost_safety_cookfromfrozen
+      is it ok to eat [ice-cream](dairy) every day?
+    intent: ask_healthy_eating_basic
+  - action: action_inform_healthy_eating_basic
 
+- story: inform about healthy eating examples
+  steps:
+  - user: |
+      what are some examples of healthy [dairy](dairy)?
+    intent: ask_healthy_eating_examples
+  - action: action_inform_healthy_eating_examples
+
+- story: greet and inform about healthy eating path
+  steps:
+  - user: |
+      hello, can you give me a recipe for [breakfast](dish_categories) [taco](dish_categories)?
+    intent: ask_recipe
+  - action: action_retrieve_recipes
+
+- story: general flow path
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_introduce
+  - user: |
+      can you tell me what a healthy diet consists of?
+    intent: ask_healthy_eating_basic
+  - action: action_inform_healthy_eating_basic
+  - user: |
+      thanks
+    intent: thank
+  - action: utter_noproblem
+
+- story: chitchat path
+  steps:
+  - user: |
+      how are you doing
+    intent: chitchat
+  - action: utter_chitchat
+  - user: |
+      what's up
+    intent: ask_for_a_joke
+  - action: utter_tellajoke
+
+- story: button happy path
+  steps:
+  - user: |
+    give me a recipe with chicken
+    intent: ask_recipe
+  - action: action_retrieve_recipes
+  - user: |
+    /button_intent{"button_choice": "yes"}
+  - action: action_button_choice
+
+- story: button unhappy path
+  steps:
+  - user: |
+    give me a recipe with chicken
+    intent: ask_recipe
+  - action: action_retrieve_recipes
+  - user: |
+    /button_intent{"button_choice": "no"}
+  - action: action_button_choice
+
+  - story: button cancel path
+  steps:
+  - user: |
+    give me a recipe with chicken
+    intent: ask_recipe
+  - action: action_retrieve_recipes
+  - user: |
+    /button_intent{"button_choice": "cancel"}
+  - action: action_button_choice

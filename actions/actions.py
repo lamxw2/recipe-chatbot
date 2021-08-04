@@ -13,9 +13,38 @@ import logging
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
+class ActionButtonChoice(Action):
+
+    def name(self) -> Text:
+        return "action_button_choice"
+    
+    def run(self, dispatcher, tracker, domain):
+        
+        # Get slots for recipe (list of dicts), button choices and recipe choices
+        recipes = tracker.get_slot("recipe_results")
+        logging.info(f"Get slot {recipes}")
+        button_choice =  tracker.get_slot("button_choice")
+
+        if button_choice == "yes":
+
+            dispatcher.utter_message("I'm glad you liked them! :)")
+
+        elif button_choice == "no":
+
+            dispatcher.utter_message("I'm sorry you didn't like any of them :(")
+        
+        elif button_choice == "cancel":
+
+            dispatcher.utter_message("Okay! What else would you like?")
+        
+        else:
+            dispatcher.utter_message("Oops, my creator screwed up and something that shouldn't have gone wrong did go wrong.")
+
+        return []
 
 class ActionRetrieveRecipes(Action):
 
@@ -24,14 +53,15 @@ class ActionRetrieveRecipes(Action):
     global df
     df = pd.read_pickle('data/datasets/recipes_dataset.pkl')
     
-    def search_recipe(self, cuisine, ingredient, category):
-        recipes_df = df[df['ingredients'].str.contains(ingredient, case=False) & df['categories'].str.contains(category, case=False) & df['categories'].str.contains(cuisine, case=False)].sort_values(by=['calories', 'rating'], ascending=[True, False])
-        recipes_df = recipes_df.head(5)
-        
-        recipes = []
+    def create_recipe_choices(self, df):
 
-        for index, row in recipes_df.iterrows():
+        recipes = []
+        id = 1
+
+        for index, row in df.iterrows():
             recipe = {}
+
+            recipe['id'] = id
 
             recipe['title'] = row['title']
 
@@ -52,62 +82,116 @@ class ActionRetrieveRecipes(Action):
 
             recipes.append(recipe)
 
-        # List of dicts
+            id += 1
+        
         return recipes
 
-    def format_recipe(self, recipes):
-        
+    def search_recipes(self, cuisine_list, ingredient_list, category_list):
+
+        if not cuisine_list:
+            cuisine_category_list = category_list
+        else:
+            cuisine_category_list = cuisine_list + category_list
+
+        base = r'^{}'
+        expr = '(?=.*{})'
+        category_query_string = base.format(''.join(expr.format(w) for w in cuisine_category_list))
+        ingredient_query_string = base.format(''.join(expr.format(w) for w in ingredient_list))
+
+        recipes_df = df[df['ingredients'].str.contains(ingredient_query_string, case=False)
+        & df['categories'].str.contains(category_query_string, case=False)].sort_values(by=['calories', 'rating'], ascending=[True, False])
+
+        recipes_df = recipes_df.head()
+
+        return recipes_df
+
+    # List of recipes to choose from
+    def format_recipe_previews(self, recipes):
+
         recipes_format = []
         for recipe in recipes:
-            recipe_str = "Title: " + recipe['title'] + "\n" 
+            recipe_str = f"ID: {recipe['id']}\n"
+            recipe_str += "Title: " + recipe['title'] + "\n" 
             recipe_str += "Description: " + recipe['desc'] + "\n"
             recipe_str += f"Calories: {recipe['calories']}\n"
             recipe_str += f"Protein: {recipe['protein']} \n"
             recipe_str += "Ingredients: \n" + recipe['ingredients'] + "\n"
             recipe_str += "Directions: \n" + recipe['directions']
             recipes_format.append(recipe_str)
-        
+    
         return recipes_format
 
+    def format_chosen_recipe(self, recipe):
+
+        recipe_str = "Title: " + recipe['title'] + "\n" 
+        recipe_str += "Description: " + recipe['desc'] + "\n"
+        recipe_str += f"Calories: {recipe['calories']}\n"
+        recipe_str += f"Protein: {recipe['protein']} \n"
+        recipe_str += "Ingredients: \n" + recipe['ingredients'] + "\n"
+        recipe_str += "Directions: \n" + recipe['directions']
+
+        return recipe_str
 
     def name(self) -> Text:
         return "action_retrieve_recipes"
     
     def run(self, dispatcher, tracker, domain):
         
+        # modify this for multiple entities tmr
         recipes = []
         ingredients = ['dairy', 'fruits', 'grains', 'proteins', 'vegetables']
 
-        entity_cuisine = next(tracker.get_latest_entity_values("cuisine"), None)
+        entity_cuisine = list(tracker.get_latest_entity_values("cuisine"))
 
         entity_ingredient = None
         for ingredient in ingredients:
-            entity_ingredient = next(tracker.get_latest_entity_values(ingredient), None)
-            logging.info(f"ingredient: {entity_ingredient}")
-            if entity_ingredient is not None:
+
+            entity_ingredient = list(tracker.get_latest_entity_values(ingredient))
+            logging.info(f"ingredient type: {ingredient}")
+
+            if entity_ingredient:
+
+                logging.info(f"ingredient: {entity_ingredient}")
                 break
+            else:
+                logging.info(f"else: {entity_ingredient}")
         
-        entity_category = next(tracker.get_latest_entity_values("dish_categories"), None)
+        entity_category = list(tracker.get_latest_entity_values("dish_categories"))
         
         logging.info(entity_cuisine)
         logging.info(entity_ingredient)
         logging.info(entity_category)
 
-        if entity_cuisine is not None:
-            recipes = self.search_recipe(cuisine=entity_cuisine, ingredient='', category='')
+        recipes_df = self.search_recipes(entity_cuisine, entity_ingredient, entity_category)
+        logging.info(recipes_df)
 
-        elif entity_ingredient is not None:
-            recipes = self.search_recipe(cuisine='', ingredient=entity_ingredient, category='')
+        if recipes_df.empty:
 
-        if entity_category is not None:
-            recipes = self.search_recipe(cuisine='', ingredient='', category='entity_category')
-        
-        recommended_recipes = self.format_recipe(recipes)
+            error_message = "Sorry, I am unable to find recipes with what you've asked for. "
+            error_message += "Trying a different phrasing (e.g. switching from plural to singular, or vice versa) would help!"
+            dispatcher.utter_message(error_message)
 
-        for recipe in recommended_recipes:
-            dispatcher.utter_message(recipe)
+        else:
 
-        return []
+            recipes = self.create_recipe_choices(recipes_df)
+            recommended_recipes = self.format_recipe_previews(recipes)
+
+            logging.info(f"Slot was set: {type(recipes)}")
+
+            dispatcher.utter_message("Here are the recipes!")
+
+            for recipe in recommended_recipes:
+                dispatcher.utter_message(recipe)
+            
+            buttons = []
+
+            buttons.append({"title": "Yes" , "payload": "/button_intent{\"button_choice\": \"yes\"}"})
+            buttons.append({"title": "No" , "payload": "/button_intent{\"button_choice\": \"no\"}"})
+            buttons.append({"title": "Cancel" , "payload": "/button_intent{\"button_choice\": \"cancel\"}"})
+            
+            dispatcher.utter_message(text = "Do you like any of the recipes?" , buttons=buttons)
+
+        return [SlotSet("recipe_results", recipes)]
 
 class ActionInformHealthyEatingBasic(Action):
 
@@ -302,8 +386,18 @@ class ActionInformHealthyEatingExamples(Action):
         example_messages = []
         df, unhealthy_message, error_message = self.get_result(entity_foodgroup, entity_fooditem)
 
+        if df.empty and unhealthy_message is None:
+            error_message = "Sorry, something went wrong with retrieving examples."
+            example_messages.append(error_message)
+        
+        elif df.empty and unhealthy_message is not None:
+
+            unhealthy_message += " Why not try a low-fat version or a healthier substitute? "
+            unhealthy_message += "Yogurt is a common, tasty substitute for ice-cream and cream cheese!"
+            example_messages.append(unhealthy_message)
+
         # Make sure dataframe isnt empty
-        if ~df.empty:
+        else:
 
             # Dairy food group
             if entity_foodgroup == "dairy":
@@ -322,8 +416,7 @@ class ActionInformHealthyEatingExamples(Action):
                 elif unhealthy_message is not None:
 
                     dairy_1st = unhealthy_message
-                    dairy_1st += " Why not try a low-fat version or a healthier substitute? "
-                    dairy_1st += "Yogurt is a common, tasty substitute for ice-cream and cream cheese!"
+                    
 
                     example_messages.append(dairy_1st)
                 
@@ -481,16 +574,12 @@ class ActionInformHealthyEatingExamples(Action):
                     veg_1st += "\nVegetables can be eaten fresh, frozen or canned!"
 
                     example_messages.append(veg_1st)
-
-        else:
-        
-            example_messages.append(error_message)
         
         return example_messages
 
     def get_result(self, entity_foodgroup, entity_fooditem):
 
-        df = None
+        df = pd.DataFrame()
         unhealthy_message = None
         error_message = None
 

@@ -6,3 +6,49 @@ stories:
     steps:
     - intent: greet
     - action: utter_introduce
+  
+  - story: tell a joke path
+    steps:
+    - intent: ask_for_a_joke
+    - action: utter_tellajoke
+    - intent: thank
+    - action: utter_noproblem
+  
+  - story: chit chat path
+    steps:
+    - intent: chitchat
+    - action: utter_chitchat
+  
+  - story: suggest recipes short happy path
+    steps:
+    - intent: ask_recipe
+    - action: action_retrieve_recipes
+    - slot_was_set:
+      - recipe_results: recipes
+    - intent: button_intent
+    - slot_was_set:
+      - button_choice: yes
+    - action: action_button_choice
+  
+  - story: suggest recipes cancel path 
+    steps:
+    - intent: ask_recipe
+    - action: action_retrieve_recipes
+    - slot_was_set:
+      - recipe_results: recipes
+    - intent: button_intent
+    - slot_was_set:
+      - button_choice: cancel
+    - action: action_button_choice
+  
+  - story: suggest recipes short unhappy path
+    steps:
+    - intent: ask_recipe
+    - action: action_retrieve_recipes
+    - slot_was_set:
+      - recipe_results: recipes
+    - intent: button_intent
+    - slot_was_set:
+      - button_choice: no
+    - action: action_button_choice
+

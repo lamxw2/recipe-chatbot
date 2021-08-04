@@ -1,0 +1,108 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: false
+- goodbye:
+    use_entities: false
+- thank:
+    use_entities: false
+- ask_for_a_joke:
+    use_entities: false
+- chitchat:
+    use_entities: false
+- ask_recipe:
+    use_entities: true
+- button_intent
+- ask_healthy_eating_basic:
+    use_entities:
+      - vegetables
+      - fruits
+      - dairy
+      - proteins
+      - grains
+    ignore_entities:
+      - cuisine
+      - dish_categories
+- ask_healthy_eating_examples:
+    use_entities:
+      - vegetables
+      - fruits
+      - dairy
+      - proteins
+      - grains
+    ignore_entities:
+      - cuisine
+      - dish_categories
+- ask_for_help:
+    use_entities: false
+
+actions:
+  - action_retrieve_recipes
+  - action_button_choice
+  - action_inform_healthy_eating_basic
+  - action_inform_healthy_eating_examples
+
+entities:
+  - dairy
+  - fruits
+  - grains
+  - proteins
+  - vegetables
+  - cuisine
+  - dish_categories
+  - button_choice
+
+slots:
+  recipe_results:
+    type: list
+    influence_conversation: false
+  button_choice:
+    type: categorical
+    values:
+      - yes
+      - no
+      - cancel
+    influence_conversation: true
+
+responses:
+  utter_introduce:
+    - text: |
+        Hi! I'm CoCo, the cooking companion. 
+        I can chat about healthy eating habits and dietary information or suggest recipes. Tell me what you would like to talk about!
+        If you're unsure about what to do, try asking for 'help'.
+  utter_goodbye:
+    - text: Bye
+  utter_fallback:
+    - text: Sorry, I haven't learnt how to understand that.
+  utter_ask_rephrase:
+    - text: Sorry, I didn't understand that. Could you rephrase?
+  utter_default:
+    - text: Sorry, I haven't learnt how to handle that.
+  utter_noproblem:
+    - text: You're welcome!
+    - text: No problem!
+    - text: It's my pleasure.
+    - text: Anytime!
+  utter_chitchat:
+    - text: I'm your friendly cooking companion CoCo! I'm doing great!
+    - text: I hope I'm living up to your standards :)
+  utter_tellajoke:
+    - text: What did one seed say to the other? "Boy, I'm feeling really grounded."
+    - text: Did you really just say "what's cooking"? I bet you thought that was funny :P
+    - text: I'm glad I'm a chatbot and not an autopilot airplane bot. I'd hate to have my head in the clouds.
+  utter_answer_help:
+    - text: |
+        To ask for information about healthy eating, try asking something like:
+        "What is a balanced diet?"
+        "How much meat should I eat a day?"
+        "What are examples of dark green vegetables?"
+        To ask for recipe suggestions, try:
+        "Give me a recipe with soup"
+        "Show me how to make a chicken sandwich"
+        "Can you show me how to make Indian curry?"
+        I hope you have fun :)

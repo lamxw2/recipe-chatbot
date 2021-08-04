@@ -361,3 +361,4 @@ preprocess_data/recipes/full_format_recipes.json
 preprocess_data/recipes/utils.py
 preprocess_data/cuisine/DOHMH_New_York_City_Restaurant_Inspection_Results.csv
 preprocess_data/cuisine/Restaurant_Inspection_Open_Data_Dictionary_082214.xlsx
+eval_nlu/

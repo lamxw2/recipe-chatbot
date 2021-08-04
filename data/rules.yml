@@ -2,15 +2,15 @@ version: "2.0"
 
 rules:
 
+- rule: Inform the user how to use CoCo
+  steps:
+  - intent: ask_for_help
+  - action: utter_answer_help
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
-
-- rule: Suggest recipes anytime the user asks for a recipe
-  steps:
-  - intent: ask_recipe
-  - action: action_retrieve_recipes
 
 - rule: inform healthy eating basic path
   steps:
@@ -26,6 +26,27 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_fallback
+
+- rule: respond when the user says thanks
+  steps:
+  - intent: thank
+  - action: utter_noproblem
+
+#- rule: ask for user's recipe choice if button choice is yes
+#  condition:
+#  - slot_was_set:
+#    - button_choice: yes
+#  steps:
+#  - action: utter_buttonchoice_yes
+#  - action: choose_recipe_form
+#  - active_loop: choose_recipe_form
+
+#- rule: provide recipe details after recipe_choice slot is filled
+#  condition:
+#  - slot_was_set:
+#    - recipe_choice: true
+#  steps:
+#  - action: action_choose_recipe
 
 #- rule: Implementation of the Two-Stage-Fallback
 #  steps:

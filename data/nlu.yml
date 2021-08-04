@@ -27,40 +27,65 @@ nlu:
     - see you around
     - bye bye
     - cya
-- intent: affirm
+- intent: thank
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - yes thanks
-    - yeah
-    - yup
-    - ok
-    - okay
-    - sure
-    - k
-- intent: deny
+    - ty
+    - thank you
+    - tyvm
+    - thx
+    - thank you very much
+    - tysm
+    - thank you so much
+    - that was helpful
+    - tyty
+    - thks
+    - thanks a lot
+    - thanks alot
+    - thank you for the information
+    - thx for the info
+- intent: ask_for_a_joke
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - no thanks
-    - no thx
-    - nah
-    - nope
+    - what's up
+    - tell me a joke
+    - sup
+    - what's cooking
+    - what's cookin'
+    - tell me something interesting
+    - is anything interesting
+- intent: chitchat
+  examples: |
+    - how are you?
+    - how are you doing
+    - are you a bot
+
+- intent: ask_for_help
+  examples: |
+    - help
+    - what can you do?
+    - how can i ask for a recipe?
+    - how do you work?
+    - what can i ask?
+    - bot commands
+    - commands
+    - command help
+    - bot help
+    - recipe help
+    - diet info help
+    - info help
+    - info
+    - what commands can i use?
+    - what should i type
+    - what should i say to ask for healthy diet
+    - what should i say to ask for information
+    - what can i type to ask for recipes
+    - bothelp
+    
 - intent: ask_recipe
   examples: |
     - suggest me a recipe with [beef]{"entity": "proteins", "value": "beef"}
-    - can you tell me how to make [soup]{"entity": "dish_categories", "value": "soup"}?
+    - can you tell me how to make [vegetarian]{"entity": "dish_categories", "value": "vegetarian"} [soup]{"entity": "dish_categories", "value": "soup"}?
     - give me a recipe with [chicken]{"entity": "proteins", "value": "chicken"}
-    - i want to make {"entity": "cuisine", "value": "asian"} food
+    - i want to make [asian]{"entity": "cuisine", "value": "asian"} food
     - tell me how to make [tacos]{"entity": "dish_categories", "value": "tacos"}
     - i want a [snack]{"entity": "dish_categories", "value": "snack"}
     - how can i make [japanese]{"entity": "cuisine", "value": "japanese"} dishes?
@@ -69,3 +94,7 @@ nlu:
     - i want a [sandwich]{"entity": "dish_categories", "value": "sandwich"}
     - tell me a recipe for [cookies]{"entity": "dish_categories", "value": "cookies"}
     - i want to eat healthily. recommend me a [salad]{"entity": "dish_categories", "value": "salad"}
+    - i have some [tomatoes]{"entity": "vegetables", "value": "tomatoes"} and "potatoes" {"entity": "vegetables", "value": "potatoes"}. what can i make with those?
+    - show me a recipe for [japanese]{"entity": "cuisine", "value": "japanese"} [curry]{"entity": "dish_categories", "value": "curry"}
+    - can you show me recipes for [pork]{"entity": "proteins", "value": "pork"} [breakfast]{"entity": "dish_categories", "value": "breakfast"} [taco]{"entity": "dish_categories", "value": "taco"}?
+
