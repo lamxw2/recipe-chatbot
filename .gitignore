@@ -353,7 +353,6 @@ rasa.db
 models/
 events.db-shm
 events.db-wal
-results/
 results_bert/
 results_config123/
 preprocess_data/recipes/epi_r.csv

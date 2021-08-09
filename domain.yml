@@ -57,7 +57,7 @@ entities:
   - dish_categories
   - button_choice
 
-slots:
+slots:  
   recipe_results:
     type: list
     influence_conversation: false

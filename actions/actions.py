@@ -99,7 +99,8 @@ class ActionRetrieveRecipes(Action):
         ingredient_query_string = base.format(''.join(expr.format(w) for w in ingredient_list))
 
         recipes_df = df[df['ingredients'].str.contains(ingredient_query_string, case=False)
-        & df['categories'].str.contains(category_query_string, case=False)].sort_values(by=['calories', 'rating'], ascending=[True, False])
+        & df['categories'].str.contains(category_query_string, case=False)].sort_values(by=['calories', 'rating']
+                                                                                        , ascending=[True, False])
 
         recipes_df = recipes_df.head()
 
@@ -196,13 +197,6 @@ class ActionRetrieveRecipes(Action):
 class ActionInformHealthyEatingBasic(Action):
 
     logging.basicConfig(level=logging.DEBUG)
-    
-    global dairy_df, fruit_df, grains_df, proteins_df, veg_df
-    dairy_df = pd.read_pickle('data/datasets/dairy_dataset.pkl')
-    fruit_df = pd.read_pickle('data/datasets/fruit_dataset.pkl')
-    grains_df = pd.read_pickle('data/datasets/grains_dataset.pkl')
-    proteins_df = pd.read_pickle('data/datasets/proteins_dataset.pkl')
-    veg_df = pd.read_pickle('data/datasets/veg_dataset.pkl')
 
     # Informative messages for basic healthy eating knowledge
     def basic_inform_by_foodgroup(self, entity_foodgroup):
@@ -302,7 +296,7 @@ class ActionInformHealthyEatingBasic(Action):
     def run(self, dispatcher, tracker, domain):
         
         intent = tracker.get_intent_of_latest_message()
-        logging.info(intent)
+        #logging.info(intent)
 
         entity_foodgroup = None
         foodgroup = ['dairy', 'fruits', 'grains', 'proteins', 'vegetables']
@@ -626,7 +620,9 @@ class ActionInformHealthyEatingExamples(Action):
         
         elif entity_foodgroup == "grains":
             
+            # Different ways to say whole-grains
             sub_groups_whole = ['whole-grains', 'whole grains', 'whole-grain', 'whole grain']
+            # Different ways to say refined-grains
             sub_groups_refined = ['refined-grains', 'refined grains', 'refined-grain', 'refined grain']
             sub_groups_processed = ['processed-grains', 'processed grains', 'processed grain', 'processed-grain']
 
@@ -634,15 +630,17 @@ class ActionInformHealthyEatingExamples(Action):
                 df = grains_df
 
             # If asking for sub-group only
+            # If the user asks about whole grains in one of the 4 possible ways
             elif entity_fooditem.lower() in sub_groups_whole:
                 df = grains_df[grains_df[('sub_group')].str.contains('whole grains', case=False)]
 
+            # If the user asks about refined grains in one of the 8 possible ways
             elif entity_fooditem.lower() in sub_groups_refined or entity_fooditem.lower() in sub_groups_processed:
                 df = grains_df[grains_df[('sub_group')].str.contains('refined grains', case=False)]
 
             # If asking if specific grain food is part of a subgroup
             else:
-
+                # Obtain the sub-group that the food belongs to
                 sub_group = list(grains_df.loc[grains_df['name'].str.contains(entity_fooditem, case=False), 'sub_group'])[0]
                 df = grains_df[grains_df['sub_group'].str.contains(sub_group, case=False)]
 

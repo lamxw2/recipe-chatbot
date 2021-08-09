@@ -20,7 +20,7 @@ stories:
 - story: provide recipes with 2 entities path
   steps:
   - user: |
-      Give me a recipe for pork taco
+      Give me a recipe for [pork](proteins) [taco](dish_categories)
     intent: ask_recipe
   - action: action_retrieve_recipes
 
@@ -74,29 +74,29 @@ stories:
 - story: button happy path
   steps:
   - user: |
-    give me a recipe with chicken
+      give me a recipe with chicken
     intent: ask_recipe
   - action: action_retrieve_recipes
   - user: |
-    /button_intent{"button_choice": "yes"}
+      /button_intent{"button_choice": "yes"}
   - action: action_button_choice
 
 - story: button unhappy path
   steps:
   - user: |
-    give me a recipe with chicken
+      give me a recipe with chicken
     intent: ask_recipe
   - action: action_retrieve_recipes
   - user: |
-    /button_intent{"button_choice": "no"}
+      /button_intent{"button_choice": "no"}
   - action: action_button_choice
 
-  - story: button cancel path
+- story: button cancel path
   steps:
   - user: |
-    give me a recipe with chicken
+      give me a recipe with chicken
     intent: ask_recipe
   - action: action_retrieve_recipes
   - user: |
-    /button_intent{"button_choice": "cancel"}
+      /button_intent{"button_choice": "cancel"}
   - action: action_button_choice
