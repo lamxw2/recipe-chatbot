@@ -1,0 +1,50 @@
+[
+  {
+    "text": "what's up",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.5267003178596497
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.45705080032348633
+    }
+  },
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.5175765752792358
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.5515486598014832
+    }
+  },
+  {
+    "text": "what are the different types of seafood",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9220452904701233
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.6668218374252319
+    }
+  }
+]

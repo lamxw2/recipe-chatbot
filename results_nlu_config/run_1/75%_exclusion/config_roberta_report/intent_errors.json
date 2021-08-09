@@ -1,0 +1,90 @@
+[
+  {
+    "text": "is anything interesting",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.45749059319496155
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9586238861083984
+    }
+  },
+  {
+    "text": "goodbye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9009184837341309
+    }
+  },
+  {
+    "text": "hello",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9841065406799316
+    }
+  },
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9662734270095825
+    }
+  },
+  {
+    "text": "i want a snack",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.5463749170303345
+    }
+  },
+  {
+    "text": "i want a sandwich",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.7283216714859009
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.8357337117195129
+    }
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.999951958656311
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9992135763168335
+    }
+  },
+  {
+    "text": "is honeydew a melon?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.7489972710609436
+    }
+  }
+]

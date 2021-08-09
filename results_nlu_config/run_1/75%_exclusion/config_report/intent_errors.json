@@ -1,0 +1,82 @@
+[
+  {
+    "text": "is anything interesting",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.46576932072639465
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9997453093528748
+    }
+  },
+  {
+    "text": "goodbye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9946383833885193
+    }
+  },
+  {
+    "text": "hello",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9849444031715393
+    }
+  },
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9932387471199036
+    }
+  },
+  {
+    "text": "i want a snack",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.5355862975120544
+    }
+  },
+  {
+    "text": "i want a sandwich",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.6025136113166809
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.672972559928894
+    }
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9932573437690735
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9988025426864624
+    }
+  }
+]

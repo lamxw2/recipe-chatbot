@@ -1,0 +1,42 @@
+[
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9875996112823486
+    }
+  },
+  {
+    "text": "info",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.885919451713562
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9651890993118286
+    }
+  },
+  {
+    "text": "what are the different types of seafood",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9997776746749878
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.8614736199378967
+    }
+  }
+]

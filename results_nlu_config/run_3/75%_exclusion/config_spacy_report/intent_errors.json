@@ -1,0 +1,50 @@
+[
+  {
+    "text": "bye bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.40069085359573364
+    }
+  },
+  {
+    "text": "hello there",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.6816612482070923
+    }
+  },
+  {
+    "text": "hi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.5452974438667297
+    }
+  },
+  {
+    "text": "i want to eat healthily. recommend me a salad",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "what can i ask?",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_recipe",
+      "confidence": 0.40474674105644226
+    }
+  },
+  {
+    "text": "is honeydew a melon?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.6626297235488892
+    }
+  }
+]

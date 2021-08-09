@@ -1,0 +1,34 @@
+[
+  {
+    "text": "tysm",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.665946900844574
+    }
+  },
+  {
+    "text": "ty",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9996125102043152
+    }
+  },
+  {
+    "text": "i want to make asian food",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.5132407546043396
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.8249164819717407
+    }
+  }
+]

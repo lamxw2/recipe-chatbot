@@ -1,0 +1,154 @@
+[
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 32,
+        "value": "pork",
+        "entity": "proteins"
+      },
+      {
+        "start": 33,
+        "end": 42,
+        "value": "breakfast",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 43,
+        "end": 47,
+        "value": "taco",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 28,
+        "end": 32,
+        "confidence_entity": 0.7777364253997803,
+        "value": "pork",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "entities": [
+      {
+        "start": 3,
+        "end": 7,
+        "value": "fish",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "how important is it to eat yogurt daily?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 33,
+        "value": "yogurt",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what type of vegetables are potatoes",
+    "entities": [
+      {
+        "start": 28,
+        "end": 36,
+        "value": "potatoes",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "are eggs healthy?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 8,
+        "value": "eggs",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are examples of dark green vegetables",
+    "entities": [
+      {
+        "start": 21,
+        "end": 31,
+        "value": "dark green",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 26,
+        "end": 31,
+        "confidence_entity": 0.8061904311180115,
+        "value": "green",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is ice cream healthy?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 12,
+        "value": "ice cream",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dairy",
+        "start": 7,
+        "end": 12,
+        "confidence_entity": 0.879074215888977,
+        "value": "cream",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can i have condensed milk instead of milk?",
+    "entities": [
+      {
+        "start": 11,
+        "end": 25,
+        "value": "condensed milk",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "grains",
+        "start": 11,
+        "end": 20,
+        "confidence_entity": 0.2732846438884735,
+        "value": "condensed",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dairy",
+        "start": 21,
+        "end": 25,
+        "confidence_entity": 0.5642653703689575,
+        "value": "milk",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

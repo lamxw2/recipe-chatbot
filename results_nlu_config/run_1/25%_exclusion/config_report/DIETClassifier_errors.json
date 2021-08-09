@@ -1,0 +1,152 @@
+[
+  {
+    "text": "i want a snack",
+    "entities": [
+      {
+        "start": 9,
+        "end": 14,
+        "value": "snack",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i want a sandwich",
+    "entities": [
+      {
+        "start": 9,
+        "end": 17,
+        "value": "sandwich",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me how to make vegetarian soup?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 38,
+        "value": "vegetarian",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 39,
+        "end": 43,
+        "value": "soup",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are the different types of seafood",
+    "entities": [
+      {
+        "start": 32,
+        "end": 39,
+        "value": "seafood",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "entities": [
+      {
+        "start": 3,
+        "end": 7,
+        "value": "fish",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "how much vegetables should i be eating",
+    "entities": [
+      {
+        "start": 9,
+        "end": 19,
+        "value": "vegetables",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are examples of healthy cheese",
+    "entities": [
+      {
+        "start": 29,
+        "end": 35,
+        "value": "cheese",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what type of vegetables are potatoes",
+    "entities": [
+      {
+        "start": 28,
+        "end": 36,
+        "value": "potatoes",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is ghee dairy?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 7,
+        "value": "ghee",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what type of grains are crackers",
+    "entities": [
+      {
+        "start": 24,
+        "end": 32,
+        "value": "crackers",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are some kinds of healthy cheeses?",
+    "entities": [
+      {
+        "start": 31,
+        "end": 38,
+        "value": "cheeses",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is honeydew a melon?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "honeydew",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

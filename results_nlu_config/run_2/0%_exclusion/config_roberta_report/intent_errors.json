@@ -1,0 +1,26 @@
+[
+  {
+    "text": "tell me a joke",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_recipe",
+      "confidence": 0.9996383190155029
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.80365389585495
+    }
+  },
+  {
+    "text": "is cream unhealthy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.980492353439331
+    }
+  }
+]

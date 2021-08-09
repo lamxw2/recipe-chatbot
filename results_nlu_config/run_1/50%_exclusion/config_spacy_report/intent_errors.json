@@ -1,0 +1,66 @@
+[
+  {
+    "text": "what's up",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.4932818114757538
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4742143452167511
+    }
+  },
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.45403769612312317
+    }
+  },
+  {
+    "text": "info",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.8871960639953613
+    }
+  },
+  {
+    "text": "what should i type",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "what are the different types of seafood",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.7940745949745178
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.7802614569664001
+    }
+  },
+  {
+    "text": "is honeydew a melon?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.48827946186065674
+    }
+  }
+]

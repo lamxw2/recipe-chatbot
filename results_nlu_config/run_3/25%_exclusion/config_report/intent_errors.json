@@ -1,0 +1,18 @@
+[
+  {
+    "text": "i want to eat healthily. recommend me a salad",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.998305082321167
+    }
+  },
+  {
+    "text": "is cod a white fish?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.7940436601638794
+    }
+  }
+]

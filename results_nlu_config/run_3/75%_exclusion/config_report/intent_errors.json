@@ -1,0 +1,26 @@
+[
+  {
+    "text": "hi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.3678123950958252
+    }
+  },
+  {
+    "text": "i want to eat healthily. recommend me a salad",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9900573492050171
+    }
+  },
+  {
+    "text": "is honeydew a melon?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.5274033546447754
+    }
+  }
+]

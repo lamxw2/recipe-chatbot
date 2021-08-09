@@ -1,0 +1,74 @@
+[
+  {
+    "text": "what's cookin'",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9953384399414062
+    }
+  },
+  {
+    "text": "what's up",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9614803194999695
+    }
+  },
+  {
+    "text": "see you later",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9764476418495178
+    }
+  },
+  {
+    "text": "hello there",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6129131317138672
+    }
+  },
+  {
+    "text": "hi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5117580890655518
+    }
+  },
+  {
+    "text": "ty",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_a_joke",
+      "confidence": 0.6910240054130554
+    }
+  },
+  {
+    "text": "i want to eat healthily. recommend me a salad",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9999746084213257
+    }
+  },
+  {
+    "text": "is cod a white fish?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.8654821515083313
+    }
+  },
+  {
+    "text": "i need help deciding what kind of red and orange veggies to get",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.4315858781337738
+    }
+  }
+]

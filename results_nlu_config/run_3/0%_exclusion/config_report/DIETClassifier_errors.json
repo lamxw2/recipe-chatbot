@@ -1,0 +1,197 @@
+[
+  {
+    "text": "show me a recipe for japanese curry",
+    "entities": [
+      {
+        "start": 21,
+        "end": 29,
+        "value": "japanese",
+        "entity": "cuisine"
+      },
+      {
+        "start": 30,
+        "end": 35,
+        "value": "curry",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cuisine",
+        "start": 21,
+        "end": 29,
+        "confidence_entity": 0.9600657224655151,
+        "value": "japanese",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "proteins",
+        "start": 30,
+        "end": 35,
+        "confidence_entity": 0.35462844371795654,
+        "value": "curry",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 32,
+        "value": "pork",
+        "entity": "proteins"
+      },
+      {
+        "start": 33,
+        "end": 42,
+        "value": "breakfast",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 43,
+        "end": 47,
+        "value": "taco",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 28,
+        "end": 32,
+        "confidence_entity": 0.43221986293792725,
+        "value": "pork",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dish_categories",
+        "start": 43,
+        "end": 47,
+        "confidence_entity": 0.6140206456184387,
+        "value": "taco",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i don't like whole-grain bread. do i really have to eat it?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 30,
+        "value": "whole-grain bread",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "grains",
+        "start": 25,
+        "end": 30,
+        "confidence_entity": 0.9455630779266357,
+        "value": "bread",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are green peas healthy?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 14,
+        "value": "green peas",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is cod a white fish?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 6,
+        "value": "cod",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.6653255820274353,
+        "value": "cod",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "grains",
+        "start": 9,
+        "end": 14,
+        "confidence_entity": 0.7670708894729614,
+        "value": "white",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what type of grains are crackers",
+    "entities": [
+      {
+        "start": 24,
+        "end": 32,
+        "value": "crackers",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i need help deciding what kind of red and orange veggies to get",
+    "entities": [
+      {
+        "start": 34,
+        "end": 48,
+        "value": "dark green",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 34,
+        "end": 37,
+        "confidence_entity": 0.5844942927360535,
+        "value": "red",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is honeydew a melon?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "honeydew",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what kind of vegetable is carrot",
+    "entities": [
+      {
+        "start": 26,
+        "end": 32,
+        "value": "carrot",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

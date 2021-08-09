@@ -1,0 +1,215 @@
+[
+  {
+    "text": "i want to eat healthily. recommend me a salad",
+    "entities": [
+      {
+        "start": 40,
+        "end": 45,
+        "value": "salad",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "show me a recipe for japanese curry",
+    "entities": [
+      {
+        "start": 21,
+        "end": 29,
+        "value": "japanese",
+        "entity": "cuisine"
+      },
+      {
+        "start": 30,
+        "end": 35,
+        "value": "curry",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 32,
+        "value": "pork",
+        "entity": "proteins"
+      },
+      {
+        "start": 33,
+        "end": 42,
+        "value": "breakfast",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 43,
+        "end": 47,
+        "value": "taco",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i barely have any apples in my diet. do i need to add more fruit?",
+    "entities": [
+      {
+        "start": 18,
+        "end": 24,
+        "value": "apples",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what is the right amount of vegetables i should eat?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 38,
+        "value": "vegetables",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i don't eat bananas. should i eat them?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 19,
+        "value": "bananas",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i don't like whole-grain bread. do i really have to eat it?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 30,
+        "value": "whole-grain bread",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "grains",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.66,
+        "value": "whole-",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what are examples of healthy cheese",
+    "entities": [
+      {
+        "start": 29,
+        "end": 35,
+        "value": "cheese",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "are green peas healthy?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 14,
+        "value": "green peas",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is cod a white fish?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 6,
+        "value": "cod",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 15,
+        "end": 19,
+        "confidence_entity": 0.494708389043808,
+        "value": "fish",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what type of grains are crackers",
+    "entities": [
+      {
+        "start": 24,
+        "end": 32,
+        "value": "crackers",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i need help deciding what kind of red and orange veggies to get",
+    "entities": [
+      {
+        "start": 34,
+        "end": 48,
+        "value": "dark green",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 34,
+        "end": 37,
+        "confidence_entity": 0.9857839941978455,
+        "value": "red",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is honeydew a melon?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "honeydew",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what kind of vegetable is carrot",
+    "entities": [
+      {
+        "start": 26,
+        "end": 32,
+        "value": "carrot",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

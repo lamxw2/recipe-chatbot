@@ -1,0 +1,34 @@
+[
+  {
+    "text": "tell me a joke",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_recipe",
+      "confidence": 0.6834775805473328
+    }
+  },
+  {
+    "text": "goodevening",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6332315802574158
+    }
+  },
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.8549790978431702
+    }
+  },
+  {
+    "text": "can i have condensed milk instead of milk?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.6734238862991333
+    }
+  }
+]

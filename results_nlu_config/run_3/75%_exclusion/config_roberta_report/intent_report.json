@@ -1,0 +1,82 @@
+{
+  "ask_healthy_eating_basic": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1-score": 0.8571428571428571,
+    "support": 6,
+    "confused_with": {}
+  },
+  "ask_recipe": {
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.4,
+    "support": 3,
+    "confused_with": {
+      "ask_healthy_eating_examples": 1,
+      "ask_healthy_eating_basic": 1
+    }
+  },
+  "ask_for_help": {
+    "precision": 0.6,
+    "recall": 0.75,
+    "f1-score": 0.6666666666666665,
+    "support": 4,
+    "confused_with": {
+      "ask_recipe": 1
+    }
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {
+      "thank": 1
+    }
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 3,
+    "confused_with": {
+      "ask_for_help": 2
+    }
+  },
+  "ask_for_a_joke": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ask_healthy_eating_examples": {
+    "precision": 0.8571428571428571,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.8571428571428571,
+    "support": 7,
+    "confused_with": {
+      "ask_healthy_eating_basic": 1
+    }
+  },
+  "thank": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1-score": 0.8571428571428571,
+    "support": 3,
+    "confused_with": {}
+  },
+  "accuracy": 0.7666666666666667,
+  "macro avg": {
+    "precision": 0.8071428571428572,
+    "recall": 0.7217261904761905,
+    "f1-score": 0.7255952380952381,
+    "support": 30
+  },
+  "weighted avg": {
+    "precision": 0.7883333333333333,
+    "recall": 0.7666666666666667,
+    "f1-score": 0.747142857142857,
+    "support": 30
+  }
+}

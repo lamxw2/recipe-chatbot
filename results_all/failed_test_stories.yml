@@ -1,0 +1,47 @@
+version: "2.0"
+stories:
+- story: button unhappy path (./tests/test_stories.yml)
+  steps:
+  - intent: ask_recipe
+    entities:
+    - proteins: chicken
+  - action: action_retrieve_recipes
+  - user: |-
+      /button_intent{"button_choice": "no"}
+    entities:
+    - button_choice: no
+  - slot_was_set:
+    - button_choice: no
+  - action: action_button_choice  # predicted: action_listen
+- story: button cancel path (./tests/test_stories.yml)
+  steps:
+  - intent: ask_recipe
+    entities:
+    - proteins: chicken
+  - action: action_retrieve_recipes
+  - user: |-
+      /button_intent{"button_choice": "cancel"}
+    entities:
+    - button_choice: cancel
+  - slot_was_set:
+    - button_choice: cancel
+  - action: action_button_choice  # predicted: action_listen
+- story: provide recipes with 1 ingredient path (./tests/test_stories.yml)
+  steps:
+  - intent: ask_recipe
+    entities:
+    - proteins: chicken
+  - action: action_retrieve_recipes
+- story: button happy path (./tests/test_stories.yml)
+  steps:
+  - intent: ask_recipe
+    entities:
+    - proteins: chicken
+  - action: action_retrieve_recipes
+  - user: |-
+      /button_intent{"button_choice": "yes"}
+    entities:
+    - button_choice: yes
+  - slot_was_set:
+    - button_choice: yes
+  - action: action_button_choice  # predicted: action_listen

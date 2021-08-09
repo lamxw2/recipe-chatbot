@@ -1,0 +1,74 @@
+[
+  {
+    "text": "what's up",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.47163501381874084
+    }
+  },
+  {
+    "text": "goodevening",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.7326138019561768
+    }
+  },
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.44030970335006714
+    }
+  },
+  {
+    "text": "what can you do?",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.730006754398346
+    }
+  },
+  {
+    "text": "what are the different types of seafood",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9638322591781616
+    }
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.42079615592956543
+    }
+  },
+  {
+    "text": "how much vegetables should i be eating",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.6010844707489014
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9137169718742371
+    }
+  },
+  {
+    "text": "is honeydew a melon?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.47194764018058777
+    }
+  }
+]

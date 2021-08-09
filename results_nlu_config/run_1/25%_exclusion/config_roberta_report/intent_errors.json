@@ -1,0 +1,50 @@
+[
+  {
+    "text": "that was helpful",
+    "intent": "thank",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.9715957641601562
+    }
+  },
+  {
+    "text": "what can you do?",
+    "intent": "ask_for_help",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.44841477274894714
+    }
+  },
+  {
+    "text": "what are the different types of seafood",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9999895095825195
+    }
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.9291340112686157
+    }
+  },
+  {
+    "text": "how much vegetables should i be eating",
+    "intent": "ask_healthy_eating_basic",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.49991369247436523
+    }
+  },
+  {
+    "text": "is ghee dairy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9995275139808655
+    }
+  }
+]

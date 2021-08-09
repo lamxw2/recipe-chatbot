@@ -1,0 +1,34 @@
+[
+  {
+    "text": "what's cookin'",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.931006133556366
+    }
+  },
+  {
+    "text": "what's up",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_examples",
+      "confidence": 0.8920727372169495
+    }
+  },
+  {
+    "text": "i want to eat healthily. recommend me a salad",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.7217719554901123
+    }
+  }
+]

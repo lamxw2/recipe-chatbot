@@ -1,0 +1,732 @@
+## intent:ask_for_a_joke
+- 
+- sup
+- what's cooking
+
+## intent:goodbye
+- have a nice day
+- bye
+- cya
+- good night
+- see you around
+
+## intent:greet
+- 
+- hello there
+- hey dude
+- hey
+- good morning
+
+## intent:thank
+- thanks a lot
+- thank you for the information
+- 
+- tyty
+- tyvm
+- thank you
+
+## intent:ask_recipe
+- i want a [sandwich](dish_categories)
+- show me a recipe for [japanese](cuisine) [curry](dish_categories)
+- how can i make an [indian](cuisine) dish
+- i want to eat healthily. recommend me a [salad](dish_categories)
+- i want a [snack](dish_categories)
+- suggest me a recipe with [beef](proteins)
+- give me a recipe with [chicken](proteins)
+
+## intent:ask_for_help
+- what can i ask?
+- info help
+- recipe help
+- help
+- what can you do?
+- what should i say to ask for information
+- how can i ask for a recipe?
+- commands
+
+## intent:ask_healthy_eating_basic
+- what are the different types of [seafood](proteins)
+- what is the recommended amount of [dairy](dairy) to eat?
+- do i really have to eat [fruits](fruits) daily?
+- i barely consume [dairy](dairy). do i need to drink more milk?
+- i barely have any [apples](fruits) in my diet. do i need to add more fruit?
+- is there a limit to how many [eggs](proteins) i can eat in a day?
+- can i eat [white bread](grains) everyday?
+- i don't like [whole-grain bread](grains). do i really have to eat it?
+- i don't know how to eat healthily
+- are [whole grains](grains) necessary?
+- how much [vegetables](vegetables) should i be eating
+- what is a healthy meal?
+
+## intent:ask_healthy_eating_examples
+- is [broccoli](vegetables) a dark-green vegetable?
+- what [berries](fruits) should i buy?
+- is [honeydew](fruits) a melon?
+- what kind of [rice](grains) should i buy?
+- what kind of seafood is [oyster](proteins)
+- what are some things that are [carbohydrates](grains)?
+- what is [red meat](proteins)?
+- what type of meat is [chicken](proteins)
+- is [pasta](grains) a healthy grain?
+- what are other kinds of [citrus](fruits) fruits
+- i need help deciding what kind of [red and orange]{"entity": "vegetables", "value": "dark green"} veggies to get
+- is [cod](proteins) a white fish?
+- is [soy milk]{"entity": "dairy", "value": "soy milk]"} a source of dairy?
+
+## synonym:dark green
+- red and orange
+
+## synonym:soy milk]
+- soy milk
+
+## lookup:cuisine
+- italian
+- chinese
+- american
+- pakistani
+- japanese
+- caribbean
+- indian
+- mexican
+- latin
+- cuban
+- dominican
+- puerto rican
+- south american
+- central american
+- korean
+- turkish
+- african
+- spanish
+- greek
+- continental
+- brazilian
+- mediterranean
+- thai
+- asian
+- russian
+- vietnamese
+- cambodian
+- malaysian
+- peruvian
+- tex-mex
+- irish
+- french
+- german
+- middle eastern
+- australian
+- bangladeshi
+- creole
+- english
+- hawaiian
+- scandinavian
+- filipino
+- californian
+- polish
+- barbecue
+- afghan
+- eastern european
+- cajun
+- chilean
+- indonesian
+- egyptian
+- moroccan
+- ethiopian
+- southwestern
+- armenian
+- portuguese
+- iranian
+- polynesian
+- czech
+- jamaican
+- british
+
+## lookup:dairy
+- milk
+- soy milk
+- buttermilk
+- yogurt
+- kefir
+- frozen yogurt
+- evaporated milk
+- milk powder
+- condensed milk
+- whole milk
+- cheese
+- brie
+- camembert
+- cheddar
+- cottage cheese
+- colby
+- edam
+- feta
+- fontina
+- goats cheese
+- gouda
+- gruyere
+- limburger
+- queso anejo
+- queso asadero
+- queso chihuahua
+- monterey
+- mozzarella
+- muenster
+- parmesan
+- provolone
+- ricotta
+- quark
+- Swiss cheese
+- Cream
+- heavy cream
+- sour cream
+- whipped cream
+- butter
+- ice-cream
+- ice cream
+- ghee
+- cream cheese
+- whey
+- cultured milk
+- curds
+- curd whey
+- dairy
+- cheeses
+
+## lookup:dish_categories
+- sandwich
+- kid-friendly
+- cookie
+- bake
+- port
+- winter
+- chill
+- bon appétit
+- soup/stew
+- gourmet
+- new york
+- sauté
+- low fat
+- low cal
+- high fiber
+- dinner
+- healthy
+- simmer
+- pescatarian
+- dairy free
+- peanut free
+- tree nut free
+- soy free
+- kosher
+- side
+- quick & easy
+- fall
+- california
+- summer
+- spring
+- boil
+- wheat/gluten-free
+- no sugar added
+- no-cook
+- cocktail party
+- stir-fry
+- picnic
+- lunch
+- sugar conscious
+- breakfast
+- cake
+- chocolate
+- dessert
+- tropical fruit
+- party
+- low carb
+- brandy
+- massachusetts
+- sauce
+- escarole
+- brunch
+- honey
+- kidney friendly
+- braise
+- low sodium
+- shower
+- condiment/spread
+- fry
+- pan-fry
+- advance prep required
+- paleo
+- blender
+- roast
+- vegan
+- back to school
+- poker/game night
+- casserole/gratin
+- deep-fry
+- grill
+- grill/barbecue
+- bitters
+- liqueur
+- alcoholic
+- cocktail
+- drink
+- backyard bbq
+- citrus
+- freeze/chill
+- appetizer
+- potluck
+- orange
+- pomegranate
+- mixer
+- one-pot meal
+- harpercollins
+- quick and healthy
+- microwave
+- salad dressing
+- low/no sugar
+- condiment
+- frozen dessert
+- pastry
+- noodle
+- stuffing/dressing
+- sausage
+- curry
+- fat free
+- quince
+- non-alcoholic
+- punch
+- tea
+- low cholesterol
+- tarragon
+- egg nog
+- house & garden
+- wok
+- tortillas
+- kirsch
+- stew
+- low sugar
+- smoothie
+- aperitif
+- cookies
+- pasadena
+- pancake
+- pernod
+- hamburger
+- chili
+- macaroni and cheese
+- no meat
+- snack
+- snack week
+- pressure cooker
+- steam
+- boil
+- hors doeuvre
+- omelet
+- organic
+- marsala
+- potato salad
+- chambord
+- slow cooker
+- freezer food
+- stock
+- drinks
+- skewer
+- pie
+- cupcake
+- chartreuse
+- créme de cacao
+- dip
+- 3-ingredient recipes
+- smoker
+- pickles
+- oatmeal
+- flat bread
+- tart
+- pot pie
+- taco
+- granola
+- lasagna
+- orzo
+- custard
+- muffin
+- meatball
+- cobbler
+- crumble
+- iced tea
+- leftovers
+- cranberry sauce
+- biscuit
+- juice
+- waffle
+- brownie
+- hummus
+- caviar
+- digestif
+- sorbet
+- salsa
+- souffle
+- soufflé
+- meringue
+- frittata
+- burrito
+- midori
+- meatloaf
+- fritter
+- iced coffee
+- quiche
+- marinade
+- crêpe
+- crepe
+- sourdough
+- burger
+- tacos
+- vegetarian
+
+## lookup:fruits
+- Asian pears
+- bananas
+- blackberries
+- blueberries
+- cranberries
+- currants
+- dewberries
+- huckleberries
+- kiwifruit
+- loganberries
+- mulberries
+- raspberries
+- strawberries
+- calamondin
+- grapefruit
+- kumquats
+- lemons
+- limes
+- mandarin oranges
+- pomelos
+- tangerines
+- tangelos
+- cherries
+- dates
+- figs
+- grapes
+- guava
+- jackfruit
+- lychee
+- mangoes
+- melons cantaloupe
+- casaba
+- honeydew
+- watermelon
+- nectarines
+- papaya
+- passion fruit
+- peaches
+- pears
+- persimmons
+- pineapple
+- plums
+- pomegranates
+- prunes
+- raisins
+- rhubarb
+- sapote
+- soursop
+- starfruit
+- tamarind
+- oranges
+- kiwi
+- orange
+- cherry
+- blackberry
+- blueberry
+- cranberry
+- currants
+- dewberry
+- huckleberry
+- kiwifruit
+- loganberry
+- mulberry
+- raspberry
+- strawberry
+- apples
+- apple
+- apricot
+- apricots
+- fruit
+- fruits
+- citrus
+- berry
+- berries
+- melon
+
+## lookup:grains
+- amaranth
+- hulled barley
+- brown rice
+- buckwheat
+- bulgur
+- millet
+- oats
+- popcorn
+- quinoa
+- dark rye
+- triticale
+- whole-grain cornmeal
+- whole-wheat bread
+- whole-grain bread
+- whole grain bread
+- whole-wheat chapati
+- whole-grain cereals
+- whole-grain crackers
+- wild rice
+- white breads
+- cereals
+- crackers
+- corn grits
+- cream of rice
+- cream of wheat
+- barley
+- masa
+- pasta
+- white rice
+- processed grains
+- processed-grains
+- processed grain
+- processed-grain
+- whole-grains
+- whole-grain
+- whole grain
+- whole grains
+- refined-grains
+- refined-grain
+- refined grains
+- refined grains
+- grains
+- carbohydrate
+- carbohydrates
+
+## lookup:proteins
+- meat
+- beef
+- goat
+- lamb
+- pork
+- bear
+- bison
+- deer
+- elk
+- moose
+- opossum
+- rabbit
+- raccoon
+- squirrel
+- chicken
+- Cornish hens
+- dove
+- duck
+- ostrich
+- pheasant
+- quail
+- goose
+- turkey
+- chicken eggs
+- duck eggs
+- quail eggs
+- ostrich eggs
+- Cod
+- black sea bass
+- catfish
+- crawfish
+- haddock
+- hake
+- plaice
+- perch
+- squid
+- pollock
+- coley
+- dab
+- flounder
+- red mullet
+- sole
+- gurnard
+- tilapia
+- whiting
+- herring
+- pilchards
+- salmon
+- sardines
+- sprats
+- trout
+- mackerel
+- crab
+- clams
+- lobster
+- oyster
+- prawns
+- shrimp
+- mussels
+- scallops
+- squid
+- seafood
+- shellfish
+- fish
+- langoustine
+- whey
+- cultured milk
+- curds
+- curd whey
+- tree nuts
+- peanuts
+- nut butter
+- peanut butter
+- chia seeds
+- flax seeds
+- pumpkin seeds
+- sesame seeds
+- sunflower seeds
+- seed butter
+- sesame butter
+- tahini butter
+- sunflower butter
+- tofu
+- tempeh
+- soy flour
+- protein
+- proteins
+- red meat
+- white fish
+- oily fish
+
+## lookup:vegetables
+- amaranth leaves
+- basil
+- beet greens
+- bitter melon leaves
+- bok choy
+- broccoli
+- chamnamul
+- chrysanthemum leaves
+- chard
+- cilantro
+- collards
+- cress
+- delion greens
+- kale
+- lambsquarters
+- mustard greens
+- poke greens
+- romaine lettuce
+- spinach
+- nettles
+- taro leaves
+- turnip greens
+- watercress
+- calabaza
+- carrots
+- red chili peppers
+- red bell peppers
+- orange bell peppers
+- pimento/pimiento
+- sweet potatoes
+- tomatoes
+- 100% tomato juice
+- acorn squash
+- butternut squash
+- kabocha
+- pumpkin
+- black beans
+- black-eyed peas
+- bayo beans
+- brown beans
+- chickpeas
+- garbanzo beans
+- cowpeas
+- edamame
+- fava beans
+- kidney beans
+- lentils
+- lima beans
+- mung beans
+- navy beans
+- pigeon peas
+- pink beans
+- pinto beans
+- split peas
+- soybeans
+- white beans
+- breadfruit
+- burdock root
+- cassava
+- corn
+- jicama
+- lotus root
+- lima beans
+- cowpeas
+- black-eyed peas
+- green peas
+- pigeon peas
+- plantains
+- white potatoes
+- salsify
+- tapioca
+- taro root
+- dasheen
+- yautia
+- water chestnuts
+- yam
+- yucca
+- artichoke
+- asparagus
+- avocado
+- bamboo shoots
+- bean sprouts
+- beansprouts
+- beetroot
+- beet root
+- beets
+- bitter melon
+- bitter gourd
+- balsam pear
+- broccoflower
+- Brussels sprouts
+- cabbage
+- cactus pads
+- nopales
+- cauliflower
+- celeriac
+- celery
+- chayote
+- mirliton
+- chives
+- cucumber
+- eggplant
+- fennel bulb
+- garlic
+- ginger root
+- green beans
+- iceberg lettuce
+- kohlrabi
+- leeks
+- luffa
+- Chinese okra
+- mushrooms
+- okra
+- onions
+- green chili peppers
+- green bell peppers
+- radicchio
+- sprouted beans
+- radish
+- rutabaga
+- seaweed
+- snow peas
+- summer squash
+- tomatillos
+- turnips
+- winter melons
+- vegetables
+- dark green
+- dark-green
+- red and orange
+- pulses
+- beans
+- starchy
+- vegetable

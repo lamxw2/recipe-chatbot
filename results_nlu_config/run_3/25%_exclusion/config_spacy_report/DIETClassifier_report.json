@@ -1,0 +1,76 @@
+{
+  "dish_categories": {
+    "precision": 0.5,
+    "recall": 0.25,
+    "f1-score": 0.3333333333333333,
+    "support": 4,
+    "confused_with": {
+      "grains": 1,
+      "fruits": 1
+    }
+  },
+  "proteins": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "fruits": {
+    "precision": 0.5,
+    "recall": 0.25,
+    "f1-score": 0.3333333333333333,
+    "support": 4,
+    "confused_with": {}
+  },
+  "grains": {
+    "precision": 0.5714285714285714,
+    "recall": 0.8,
+    "f1-score": 0.6666666666666666,
+    "support": 5,
+    "confused_with": {
+      "dish_categories": 1
+    }
+  },
+  "vegetables": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 7,
+    "confused_with": {
+      "proteins": 1
+    }
+  },
+  "cuisine": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "dairy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.5714285714285714,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.4210526315789474,
+    "support": 24
+  },
+  "macro avg": {
+    "precision": 0.5102040816326531,
+    "recall": 0.4714285714285714,
+    "f1-score": 0.47619047619047616,
+    "support": 24
+  },
+  "weighted avg": {
+    "precision": 0.36904761904761907,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.3333333333333333,
+    "support": 24
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "text": "tell me a joke",
+    "intent": "ask_for_a_joke",
+    "intent_prediction": {
+      "name": "ask_recipe",
+      "confidence": 0.9109753370285034
+    }
+  },
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "intent": "ask_recipe",
+    "intent_prediction": {
+      "name": "ask_for_help",
+      "confidence": 0.7632743716239929
+    }
+  },
+  {
+    "text": "are eggs healthy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.5393038988113403
+    }
+  },
+  {
+    "text": "is ice cream healthy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.8680912852287292
+    }
+  },
+  {
+    "text": "can i have condensed milk instead of milk?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.5964854955673218
+    }
+  },
+  {
+    "text": "is cream unhealthy?",
+    "intent": "ask_healthy_eating_examples",
+    "intent_prediction": {
+      "name": "ask_healthy_eating_basic",
+      "confidence": 0.9842244386672974
+    }
+  }
+]
