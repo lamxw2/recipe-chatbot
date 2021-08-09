@@ -1,106 +1,78 @@
 {
-  "ask_healthy_eating_basic": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 30,
-    "confused_with": {
-      "ask_food_safety_vegetables": 23,
-      "ask_food_safety_seafood": 2,
-      "healthy_eating": 2
-    }
-  },
-  "greet": {
-    "precision": 0.65,
+  "thank": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.787878787878788,
-    "support": 13,
+    "f1-score": 1.0,
+    "support": 14,
     "confused_with": {}
   },
-  "ask_healthy_eating_examples": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 31,
-    "confused_with": {
-      "healthy_eating": 9,
-      "ask_food_safety_vegetables": 6,
-      "ask_food_safety_meat": 4
-    }
+  "ask_for_a_joke": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
   },
   "ask_recipe": {
-    "precision": 0.6,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.7499999999999999,
+    "f1-score": 1.0,
     "support": 15,
     "confused_with": {}
   },
-  "goodbye": {
-    "precision": 0.5263157894736842,
+  "ask_healthy_eating_examples": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.6896551724137931,
-    "support": 10,
+    "f1-score": 1.0,
+    "support": 31,
     "confused_with": {}
   },
   "chitchat": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 3,
-    "confused_with": {
-      "goodbye": 2,
-      "greet": 1
-    }
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_healthy_eating_basic": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 30,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
   },
   "ask_for_help": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 19,
-    "confused_with": {
-      "ask_recipe": 6,
-      "greet": 4,
-      "affirm": 3
-    }
+    "confused_with": {}
   },
-  "ask_for_a_joke": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 7,
-    "confused_with": {
-      "affirm": 2,
-      "greet": 2,
-      "ask_recipe": 2
-    }
-  },
-  "thank": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 14,
-    "confused_with": {
-      "affirm": 7,
-      "goodbye": 5,
-      "deny": 2
-    }
-  },
-  "micro avg": {
-    "precision": 0.59375,
-    "recall": 0.2676056338028169,
-    "f1-score": 0.36893203883495146,
-    "support": 142
-  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.19736842105263155,
-    "recall": 0.3333333333333333,
-    "f1-score": 0.2475037733658423,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 142
   },
   "weighted avg": {
-    "precision": 0.15995181616011864,
-    "recall": 0.2676056338028169,
-    "f1-score": 0.19992236596170546,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 142
   }
 }

@@ -12,19 +12,6 @@
     "predicted_entities": []
   },
   {
-    "text": "/button_intent{\"button_choice\": \"no\"}",
-    "entities": [
-      {
-        "text": "/button_intent{\"button_choice\": \"no\"}",
-        "start": 14,
-        "end": 37,
-        "entity": "button_choice",
-        "value": "no"
-      }
-    ],
-    "predicted_entities": []
-  },
-  {
     "text": "give me a recipe with chicken",
     "entities": [
       {
@@ -32,19 +19,6 @@
         "end": 29,
         "value": "chicken",
         "entity": "proteins"
-      }
-    ],
-    "predicted_entities": []
-  },
-  {
-    "text": "/button_intent{\"button_choice\": \"cancel\"}",
-    "entities": [
-      {
-        "text": "/button_intent{\"button_choice\": \"cancel\"}",
-        "start": 14,
-        "end": 41,
-        "entity": "button_choice",
-        "value": "cancel"
       }
     ],
     "predicted_entities": []
@@ -66,18 +40,16 @@
     "text": "Give me a recipe for pork taco",
     "entities": [
       {
-        "text": "Give me a recipe for pork taco",
         "start": 21,
         "end": 25,
-        "entity": "proteins",
-        "value": "pork"
+        "value": "pork",
+        "entity": "proteins"
       },
       {
-        "text": "Give me a recipe for pork taco",
         "start": 26,
         "end": 30,
-        "entity": "dish_categories",
-        "value": "taco"
+        "value": "taco",
+        "entity": "dish_categories"
       }
     ],
     "predicted_entities": []
@@ -86,11 +58,10 @@
     "text": "is it ok to eat ice-cream every day?",
     "entities": [
       {
-        "text": "is it ok to eat ice-cream every day?",
         "start": 16,
         "end": 25,
-        "entity": "dairy",
-        "value": "ice-cream"
+        "value": "ice-cream",
+        "entity": "dairy"
       }
     ],
     "predicted_entities": []
@@ -99,11 +70,10 @@
     "text": "what are some examples of healthy dairy?",
     "entities": [
       {
-        "text": "what are some examples of healthy dairy?",
         "start": 34,
         "end": 39,
-        "entity": "dairy",
-        "value": "dairy"
+        "value": "dairy",
+        "entity": "dairy"
       }
     ],
     "predicted_entities": []
@@ -112,18 +82,16 @@
     "text": "hello, can you give me a recipe for breakfast taco?",
     "entities": [
       {
-        "text": "hello, can you give me a recipe for breakfast taco?",
         "start": 36,
         "end": 45,
-        "entity": "dish_categories",
-        "value": "breakfast"
+        "value": "breakfast",
+        "entity": "dish_categories"
       },
       {
-        "text": "hello, can you give me a recipe for breakfast taco?",
         "start": 46,
         "end": 50,
-        "entity": "dish_categories",
-        "value": "taco"
+        "value": "taco",
+        "entity": "dish_categories"
       }
     ],
     "predicted_entities": []
@@ -136,19 +104,6 @@
         "end": 29,
         "value": "chicken",
         "entity": "proteins"
-      }
-    ],
-    "predicted_entities": []
-  },
-  {
-    "text": "/button_intent{\"button_choice\": \"yes\"}",
-    "entities": [
-      {
-        "text": "/button_intent{\"button_choice\": \"yes\"}",
-        "start": 14,
-        "end": 38,
-        "entity": "button_choice",
-        "value": "yes"
       }
     ],
     "predicted_entities": []

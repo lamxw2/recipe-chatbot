@@ -1,59 +1,58 @@
 version: "2.0"
 nlu:
-- intent: food_safety
+- intent: chitchat
   examples: |
-    - food safety
-- intent: ask_food_safety_dairy
+    - how are you?
+- intent: ask_for_a_joke
   examples: |
-    - is (milk)[dairy] safe to consume after 7 days
-- intent: ask_food_safety_meat
-  examples: |
-    - has my (meat)[proteins] gone off?
-- intent: healthy_eating
-  examples: |
-    - healthy eating pls
-- intent: ask_food_safety_seafood
-  examples: |
-    - is my (fish)[proteins] still good?
-- intent: ask_food_safety_fruits
-  examples: |
-    - do i have to put (kiwi)[fruits] in the fridge
-- intent: ask_food_safety_grains
-  examples: |
-    - can i freeze (bread)[grains]
-- intent: ask_defrost_safety_meat
-  examples: |
-    - how to thaw (chicken)[proteins]?
-- intent: ask_defrost_safety_general
-  examples: |
-    - how should i defrost (salmon)[proteins]?
-- intent: ask_defrost_safety_cookfromfrozen
-  examples: |
-    - can i cook frozen (peppers)[vegetables] without thawing?
+    - sup
 - intent: goodbye
   examples: |
     - have a nice day
-- intent: deny
-  examples: |
-    - n
-- intent: ask_food_safety_vegetables
-  examples: |
-    - how do i tell if (onions)[vegetables] are too old to eat?
-    - do i need to clean (beets)[vegetables] before using to cook?
-- intent: ask_recipe
-  examples: |
-    - can you tell me how to make (soup)[dish_categories]?
-    - i want to make (asian)[cuisine] food
-    - suggest me a recipe with (beef)[proteins]
+    - see you later
 - intent: greet
   examples: |
-    - good evening
-    - good afternoon
-- intent: affirm
+    - hello there
+    - hi
+    - good morning
+- intent: thank
   examples: |
-    - okay
-    - that sounds good
-    - of course
+    - tyty
+    - ty
+    - tyvm
+- intent: ask_recipe
+  examples: |
+    - i want to make [asian](cuisine) food
+    - i want a [sandwich](dish_categories)
+    - show me a recipe for [japanese](cuisine) [curry](dish_categories)
+- intent: ask_for_help
+  examples: |
+    - how do you work?
+    - bot help
+    - command help
+    - what can you do?
+- intent: ask_healthy_eating_basic
+  examples: |
+    - can i eat [white bread](grains) everyday?
+    - i barely consume [dairy](dairy). do i need to drink more milk?
+    - do i have to eat [poultry](proteins) on a daily basis?
+    - what is a balanced diet?
+    - should i eat [seafood](proteins) daily?
+    - i barely have any [apples](fruits) in my diet. do i need to add more fruit?
+- intent: ask_healthy_eating_examples
+  examples: |
+    - what [berries](fruits) should i buy?
+    - what kind of [rice](grains) should i buy?
+    - what is [red meat](proteins)?
+    - what type of vegetables are [potatoes](vegetables)
+    - what are examples of healthy [cheese](dairy)
+    - is [cream](dairy) unhealthy?
+- synonym: soy milk]
+  examples: |
+    - soy milk
+- synonym: dark green
+  examples: |
+    - red and orange
 - lookup: cuisine
   examples: |
     - italian
@@ -165,6 +164,8 @@ nlu:
     - cultured milk
     - curds
     - curd whey
+    - dairy
+    - cheeses
 - lookup: dish_categories
   examples: |
     - sandwich
@@ -352,6 +353,7 @@ nlu:
     - sourdough
     - burger
     - tacos
+    - vegetarian
 - lookup: fruits
   examples: |
     - Asian pears
@@ -404,6 +406,31 @@ nlu:
     - soursop
     - starfruit
     - tamarind
+    - oranges
+    - kiwi
+    - orange
+    - cherry
+    - blackberry
+    - blueberry
+    - cranberry
+    - currants
+    - dewberry
+    - huckleberry
+    - kiwifruit
+    - loganberry
+    - mulberry
+    - raspberry
+    - strawberry
+    - apples
+    - apple
+    - apricot
+    - apricots
+    - fruit
+    - fruits
+    - citrus
+    - berry
+    - berries
+    - melon
 - lookup: grains
   examples: |
     - amaranth
@@ -419,6 +446,8 @@ nlu:
     - triticale
     - whole-grain cornmeal
     - whole-wheat bread
+    - whole-grain bread
+    - whole grain bread
     - whole-wheat chapati
     - whole-grain cereals
     - whole-grain crackers
@@ -433,6 +462,21 @@ nlu:
     - masa
     - pasta
     - white rice
+    - processed grains
+    - processed-grains
+    - processed grain
+    - processed-grain
+    - whole-grains
+    - whole-grain
+    - whole grain
+    - whole grains
+    - refined-grains
+    - refined-grain
+    - refined grains
+    - refined grains
+    - grains
+    - carbohydrate
+    - carbohydrates
 - lookup: proteins
   examples: |
     - meat
@@ -520,6 +564,11 @@ nlu:
     - tofu
     - tempeh
     - soy flour
+    - protein
+    - proteins
+    - red meat
+    - white fish
+    - oily fish
 - lookup: vegetables
   examples: |
     - amaranth leaves
@@ -649,3 +698,10 @@ nlu:
     - turnips
     - winter melons
     - vegetables
+    - dark green
+    - dark-green
+    - red and orange
+    - pulses
+    - beans
+    - starchy
+    - vegetable

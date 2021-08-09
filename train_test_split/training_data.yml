@@ -1,122 +1,142 @@
 version: "2.0"
 nlu:
-- intent: food_safety
+- intent: chitchat
   examples: |
-    - i want to know about food safety
-- intent: ask_food_safety_dairy
+    - how are you doing
+    - are you a bot
+- intent: ask_for_a_joke
   examples: |
-    - i left (cheese)[dairy] out, is it safe?
-- intent: ask_food_safety_meat
-  examples: |
-    - how to tell if (pork)[proteins] is bad
-- intent: healthy_eating
-  examples: |
-    - healthy eating
-    - i want to know about healthy eating
-- intent: ask_food_safety_seafood
-  examples: |
-    - are my (clams)[proteins] fresh
-    - is my (seafood)[proteins] fresh?
-- intent: ask_food_safety_fruits
-  examples: |
-    - should i peel (apples)[fruits]
-    - do i have to wash (apple)[fruits]
-    - is (banana)[fruits] safe at room temperature
-- intent: ask_food_safety_grains
-  examples: |
-    - should i wash (rice)[grains]?
-    - i left (rice)[grains] out for 3 hours, is it safe
-    - how to store (rice)[grains]
-- intent: ask_defrost_safety_meat
-  examples: |
-    - how long does it take to thaw (chicken)[proteins]?
-    - how to defrost (turkey)[proteins] quickly
-    - help i forgot to thaw (meat)[proteins]
-- intent: ask_defrost_safety_general
-  examples: |
-    - how to defrost (strawberries)[fruits]
-    - how can i thaw (oysters)[proteins]
-    - best way to defrost (bread)[grains]
-    - i dont know how to thaw (rice)[grains]
-    - how to thaw (mushrooms)[vegetables]?
-- intent: ask_defrost_safety_cookfromfrozen
-  examples: |
-    - is it safe to steam frozen (broccoli)[vegetables]
-    - can i cook (seafood)[proteins] without defrosting?
-    - is it fine to steam (fish)[proteins] without thawing
-    - is it ok to put frozen (meat)[proteins] in the oven
-    - can i grill frozen (fish)[proteins]
-    - can i cook (pork)[proteins] from frozen?
+    - is anything interesting
+    - what's cookin'
+    - what's up
+    - tell me a joke
+    - what's cooking
+    - tell me something interesting
 - intent: goodbye
   examples: |
-    - bye
-    - see you around
-    - cu
-    - bye bye
-    - good night
-    - see you later
     - good bye
-    - goodbye
+    - cu
+    - good night
+    - bye bye
+    - bye
     - cya
-- intent: deny
-  examples: |
-    - no thanks
-    - not really
-    - I don't think so
-    - no way
-    - no thx
-    - nope
-    - don't like that
-    - never
-    - nah
-    - no
-- intent: ask_food_safety_vegetables
-  examples: |
-    - do i need to wash (broccoli)[vegetables]
-    - does eating too much (carrots)[vegetables] affect my health?
-    - how to prepare (mushrooms)[vegetables]?
-    - how can i clean (cabbage)[vegetables]
-    - is it safe to cut (lettuce)[vegetables] with a knife
-    - is peeling (potatoes)[vegetables] necessary
-    - should i boil (cauliflower)[vegetables] before eating or can i eat it raw?
-    - can i eat (pumpkin)[vegetables] raw?
-    - how should i clean (vegetables)[vegetables]?
-- intent: ask_recipe
-  examples: |
-    - tell me how to make (tacos)[dish_categories]
-    - tell me a recipe for (cookies)[dish_categories]
-    - how can i make an (indian)[cuisine] dish
-    - i want a (snack)[dish_categories]
-    - give me a recipe with (chicken)[proteins]
-    - how can i make (japanese)[cuisine] dishes?
-    - i want a (sandwich)[dish_categories]
-    - i want to eat healthily. recommend me a (salad)[dish_categories]
-    - what can i make with (potatoes)[vegetables]?
+    - see you around
+    - goodbye
 - intent: greet
   examples: |
-    - hey dude
-    - goodmorning
-    - hello there
-    - goodevening
-    - let's go
-    - morning
     - hey there
-    - hello
-    - hi
+    - goodmorning
     - hey
-    - good morning
-- intent: affirm
+    - good afternoon
+    - goodevening
+    - hey dude
+    - good evening
+    - let's go
+    - hello
+    - morning
+- intent: thank
   examples: |
-    - yup
-    - k
-    - yeah
-    - indeed
-    - yes thanks
-    - ok
-    - sure
-    - yes
-    - y
-    - correct
+    - thx
+    - thank you very much
+    - thanks a lot
+    - thks
+    - tysm
+    - thank you so much
+    - thank you for the information
+    - thx for the info
+    - thank you
+    - that was helpful
+    - thanks alot
+- intent: ask_recipe
+  examples: |
+    - suggest me a recipe with [beef](proteins)
+    - can you tell me how to make [vegetarian](dish_categories) [soup](dish_categories)?
+    - tell me how to make [tacos](dish_categories)
+    - how can i make an [indian](cuisine) dish
+    - tell me a recipe for [cookies](dish_categories)
+    - i have some [tomatoes](vegetables) and "potatoes" {"entity": "vegetables", "value": "potatoes"}. what can i make with those?
+    - give me a recipe with [chicken](proteins)
+    - how can i make [japanese](cuisine) dishes?
+    - i want a [snack](dish_categories)
+    - what can i make with [potatoes]{"entity": "vegetables", "value": "potatoes")?
+    - i want to eat healthily. recommend me a [salad](dish_categories)
+    - can you show me recipes for [pork](proteins) [breakfast](dish_categories) [taco](dish_categories)?
+- intent: ask_for_help
+  examples: |
+    - bot commands
+    - what can i type to ask for recipes
+    - info help
+    - what should i say to ask for information
+    - how can i ask for a recipe?
+    - what should i type
+    - info
+    - recipe help
+    - what can i ask?
+    - diet info help
+    - bothelp
+    - commands
+    - what should i say to ask for healthy diet
+    - what commands can i use?
+    - help
+- intent: ask_healthy_eating_basic
+  examples: |
+    - how should i eat healthily?
+    - how much [meat](proteins) should i eat a day
+    - what amount of [fruits](fruits) do i need daily?
+    - do i really have to eat [fruits](fruits) daily?
+    - are [whole grains](grains) necessary on a daily basis?
+    - what are the different types of [seafood](proteins)
+    - is there such a thing as too much [red meat](proteins)?
+    - are [whole grains](grains) necessary?
+    - what is the recommended amount of [dairy](dairy) to eat?
+    - is it ok to have [ice-cream](dairy) every day?
+    - is [dairy](dairy) important?
+    - is there a limit to how many [eggs](proteins) i can eat in a day?
+    - what does a balanced diet consist of?
+    - i don't like [whole-grain bread](grains). do i really have to eat it?
+    - how much [dairy](dairy) should i have on a daily basis?
+    - is [fish](proteins) necessary? i dislike fish
+    - what is a good amount of [fruits](fruits) to be eating?
+    - i don't know how to eat healthily
+    - i don't eat [bananas](fruits). should i eat them?
+    - how important is it to eat [yogurt](dairy) daily?
+    - how much [milk](dairy) should i drink a day
+    - how much [vegetables](vegetables) should i be eating
+    - what is a healthy meal?
+    - what is the right amount of [vegetables](vegetables) i should eat?
+- intent: ask_healthy_eating_examples
+  examples: |
+    - is [honeydew](fruits) a melon?
+    - what are other kinds of [citrus](fruits) fruits
+    - is [barley](grains) a type of grain?
+    - is [cod](proteins) a white fish?
+    - can i have [condensed milk](dairy) instead of milk?
+    - what type of meat is [chicken](proteins)
+    - what type of fruits are [pineapples](fruits)
+    - what kind of grains is [masa](grains)
+    - what type of [meat](proteins) are nutritious?
+    - what are some things that are [carbohydrates](grains)?
+    - what are examples of [dark green](vegetables) vegetables
+    - is [salmon](proteins) an oily fish?
+    - are [green peas](vegetables) healthy?
+    - is [broccoli](vegetables) a dark-green vegetable?
+    - what type of grains are [crackers](grains)
+    - what are some kinds of healthy [cheeses](dairy)?
+    - i need help deciding what kind of [red and orange]{"entity": "vegetables", "value": "dark green"} veggies to get
+    - is [ghee](dairy) dairy?
+    - is [pasta](grains) a healthy grain?
+    - are [eggs](proteins) healthy?
+    - is [soy milk]{"entity": "dairy", "value": "soy milk]"} a source of dairy?
+    - what kind of seafood is [oyster](proteins)
+    - what fruit is [watermelon](fruits)
+    - what kind of vegetable is [carrot](vegetables)
+    - is [ice cream](dairy) healthy?
+- synonym: soy milk]
+  examples: |
+    - soy milk
+- synonym: dark green
+  examples: |
+    - red and orange
 - lookup: cuisine
   examples: |
     - italian
@@ -228,6 +248,8 @@ nlu:
     - cultured milk
     - curds
     - curd whey
+    - dairy
+    - cheeses
 - lookup: dish_categories
   examples: |
     - sandwich
@@ -415,6 +437,7 @@ nlu:
     - sourdough
     - burger
     - tacos
+    - vegetarian
 - lookup: fruits
   examples: |
     - Asian pears
@@ -467,6 +490,31 @@ nlu:
     - soursop
     - starfruit
     - tamarind
+    - oranges
+    - kiwi
+    - orange
+    - cherry
+    - blackberry
+    - blueberry
+    - cranberry
+    - currants
+    - dewberry
+    - huckleberry
+    - kiwifruit
+    - loganberry
+    - mulberry
+    - raspberry
+    - strawberry
+    - apples
+    - apple
+    - apricot
+    - apricots
+    - fruit
+    - fruits
+    - citrus
+    - berry
+    - berries
+    - melon
 - lookup: grains
   examples: |
     - amaranth
@@ -482,6 +530,8 @@ nlu:
     - triticale
     - whole-grain cornmeal
     - whole-wheat bread
+    - whole-grain bread
+    - whole grain bread
     - whole-wheat chapati
     - whole-grain cereals
     - whole-grain crackers
@@ -496,6 +546,21 @@ nlu:
     - masa
     - pasta
     - white rice
+    - processed grains
+    - processed-grains
+    - processed grain
+    - processed-grain
+    - whole-grains
+    - whole-grain
+    - whole grain
+    - whole grains
+    - refined-grains
+    - refined-grain
+    - refined grains
+    - refined grains
+    - grains
+    - carbohydrate
+    - carbohydrates
 - lookup: proteins
   examples: |
     - meat
@@ -583,6 +648,11 @@ nlu:
     - tofu
     - tempeh
     - soy flour
+    - protein
+    - proteins
+    - red meat
+    - white fish
+    - oily fish
 - lookup: vegetables
   examples: |
     - amaranth leaves
@@ -712,3 +782,10 @@ nlu:
     - turnips
     - winter melons
     - vegetables
+    - dark green
+    - dark-green
+    - red and orange
+    - pulses
+    - beans
+    - starchy
+    - vegetable

@@ -5,37 +5,43 @@
     "f1-score": 0.0,
     "support": 3
   },
-  "action_inform_healthy_eating_examples": {
+  "action_button_choice": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 1
+    "support": 3
   },
-  "[taco](dish_categories)": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2
-  },
-  "[ice-cream](dairy)": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "chitchat": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "[{\"button_choice\": \"no\"}]{\"entity\": \"button_choice\", \"value\": \"no\"}": {
+  "[breakfast](dish_categories)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1
   },
-  "[pork](proteins)": {
+  "[{\"button_choice\": \"cancel\"}]{\"entity\": \"button_choice\", \"value\": \"cancel\"}": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_listen": {
+    "precision": 0.85,
+    "recall": 1.0,
+    "f1-score": 0.9189189189189189,
+    "support": 17
+  },
+  "ask_healthy_eating_basic": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "[taco](dish_categories)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "[{\"button_choice\": \"yes\"}]{\"entity\": \"button_choice\", \"value\": \"yes\"}": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -47,10 +53,34 @@
     "f1-score": 1.0,
     "support": 2
   },
-  "[breakfast](dish_categories)": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
+  "[ice-cream](dairy)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[chicken](proteins)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "utter_noproblem": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "chitchat": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "ask_healthy_eating_examples": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 1
   },
   "None": {
@@ -59,7 +89,61 @@
     "f1-score": 0.0,
     "support": 1
   },
-  "[{\"button_choice\": \"cancel\"}]{\"entity\": \"button_choice\", \"value\": \"cancel\"}": {
+  "utter_tellajoke": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "thank": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "ask_for_a_joke": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_inform_healthy_eating_basic": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "[dairy](dairy)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "[pork](proteins)": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_chitchat": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "ask_recipe": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "[{\"button_choice\": \"no\"}]{\"entity\": \"button_choice\", \"value\": \"no\"}": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "action_inform_healthy_eating_examples": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -71,117 +155,33 @@
     "f1-score": 1.0,
     "support": 6
   },
-  "[dairy](dairy)": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "action_listen": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 17
-  },
-  "[{\"button_choice\": \"yes\"}]{\"entity\": \"button_choice\", \"value\": \"yes\"}": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "ask_recipe": {
-    "precision": 0.8571428571428571,
-    "recall": 1.0,
-    "f1-score": 0.923076923076923,
-    "support": 6
-  },
-  "action_inform_healthy_eating_basic": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2
-  },
-  "action_button_choice": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 3
-  },
-  "ask_for_a_joke": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_chitchat": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_noproblem": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "ask_healthy_eating_basic": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2
-  },
   "greet": {
-    "precision": 0.6666666666666666,
-    "recall": 1.0,
-    "f1-score": 0.8,
-    "support": 2
-  },
-  "ask_healthy_eating_examples": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_tellajoke": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "[chicken](proteins)": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 4
-  },
-  "thank": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
+    "support": 2
   },
   "micro avg": {
-    "precision": 0.8541666666666666,
-    "recall": 0.6307692307692307,
-    "f1-score": 0.7256637168141593,
+    "precision": 0.9508196721311475,
+    "recall": 0.8923076923076924,
+    "f1-score": 0.9206349206349206,
     "support": 65
   },
   "macro avg": {
-    "precision": 0.3527336860670194,
-    "recall": 0.37037037037037035,
-    "f1-score": 0.3601139601139601,
+    "precision": 0.8833333333333334,
+    "recall": 0.8888888888888888,
+    "f1-score": 0.8858858858858859,
     "support": 65
   },
   "weighted avg": {
-    "precision": 0.6073260073260073,
-    "recall": 0.6307692307692307,
-    "f1-score": 0.6175147928994084,
+    "precision": 0.8530769230769231,
+    "recall": 0.8923076923076924,
+    "f1-score": 0.8711018711018711,
     "support": 65
   },
   "conversation_accuracy": {
-    "accuracy": 0.09090909090909091,
-    "correct": 1,
+    "accuracy": 0.6363636363636364,
+    "correct": 7,
     "total": 11
   }
 }

@@ -10,7 +10,9 @@ stories:
       /button_intent{"button_choice": "no"}
     entities:
     - button_choice: no
-  - action: action_button_choice  # predicted: action_default_fallback
+  - slot_was_set:
+    - button_choice: no
+  - action: action_button_choice  # predicted: action_listen
 - story: button cancel path (./tests/test_stories.yml)
   steps:
   - intent: ask_recipe
@@ -21,48 +23,15 @@ stories:
       /button_intent{"button_choice": "cancel"}
     entities:
     - button_choice: cancel
-  - action: action_button_choice  # predicted: action_default_fallback
+  - slot_was_set:
+    - button_choice: cancel
+  - action: action_button_choice  # predicted: action_listen
 - story: provide recipes with 1 ingredient path (./tests/test_stories.yml)
   steps:
   - intent: ask_recipe
     entities:
     - proteins: chicken
   - action: action_retrieve_recipes
-- story: provide recipes with 2 entities path (./tests/test_stories.yml)
-  steps:
-  - intent: ask_recipe
-    entities:
-    - proteins: pork
-  - action: action_retrieve_recipes
-- story: inform about healthy eating path (./tests/test_stories.yml)
-  steps:
-  - intent: ask_healthy_eating_basic  # predicted: ask_food_safety_vegetables: is it ok to eat ice-cream every day?
-    entities: []
-  - action: action_inform_healthy_eating_basic  # predicted: utter_storage_safety_seafood
-- story: inform about healthy eating examples (./tests/test_stories.yml)
-  steps:
-  - intent: ask_healthy_eating_examples  # predicted: healthy_eating: what are some examples of healthy dairy?
-    entities: []
-  - action: action_inform_healthy_eating_examples  # predicted: utter_storage_safety_seafood
-- story: greet and inform about healthy eating path (./tests/test_stories.yml)
-  steps:
-  - intent: ask_recipe
-    entities: []
-  - action: action_retrieve_recipes
-- story: general flow path (./tests/test_stories.yml)
-  steps:
-  - intent: greet
-  - action: utter_introduce
-  - intent: ask_healthy_eating_basic  # predicted: ask_recipe: can you tell me what a healthy diet consists of?
-  - action: action_inform_healthy_eating_basic  # predicted: action_default_fallback
-  - intent: thank  # predicted: affirm: thanks
-  - action: utter_noproblem  # predicted: action_default_fallback
-- story: chitchat path (./tests/test_stories.yml)
-  steps:
-  - intent: chitchat  # predicted: greet: how are you doing
-  - action: utter_chitchat  # predicted: utter_storage_safety_seafood
-  - intent: ask_for_a_joke  # predicted: nlu_fallback: what's up
-  - action: utter_tellajoke  # predicted: action_default_fallback
 - story: button happy path (./tests/test_stories.yml)
   steps:
   - intent: ask_recipe
@@ -73,4 +42,6 @@ stories:
       /button_intent{"button_choice": "yes"}
     entities:
     - button_choice: yes
-  - action: action_button_choice  # predicted: action_default_fallback
+  - slot_was_set:
+    - button_choice: yes
+  - action: action_button_choice  # predicted: action_listen
