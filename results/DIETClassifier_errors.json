@@ -1,0 +1,890 @@
+[
+  {
+    "text": "can you tell me how to make vegetarian soup?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 38,
+        "value": "vegetarian",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 39,
+        "end": 43,
+        "value": "soup",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dish_categories",
+        "start": 39,
+        "end": 43,
+        "confidence_entity": 0.9855851531028748,
+        "value": "soup",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i want to make asian food",
+    "entities": [
+      {
+        "start": 15,
+        "end": 20,
+        "value": "asian",
+        "entity": "cuisine"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i have some tomatoes and \"potatoes\" {\"entity\": \"vegetables\", \"value\": \"potatoes\"}. what can i make with those?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 20,
+        "value": "tomatoes",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 12,
+        "end": 20,
+        "confidence_entity": 0.935036838054657,
+        "value": "tomatoes",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "vegetables",
+        "start": 71,
+        "end": 79,
+        "confidence_entity": 0.5813704133033752,
+        "value": "potatoes",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "show me a recipe for japanese curry",
+    "entities": [
+      {
+        "start": 21,
+        "end": 29,
+        "value": "japanese",
+        "entity": "cuisine"
+      },
+      {
+        "start": 30,
+        "end": 35,
+        "value": "curry",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cuisine",
+        "start": 21,
+        "end": 29,
+        "confidence_entity": 0.9736282825469971,
+        "value": "japanese",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you show me recipes for pork breakfast taco?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 32,
+        "value": "pork",
+        "entity": "proteins"
+      },
+      {
+        "start": 33,
+        "end": 42,
+        "value": "breakfast",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 43,
+        "end": 47,
+        "value": "taco",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 28,
+        "end": 32,
+        "confidence_entity": 0.9860066175460815,
+        "value": "pork",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what amount of fruits do i need daily?",
+    "entities": [
+      {
+        "start": 15,
+        "end": 21,
+        "value": "fruits",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 15,
+        "end": 21,
+        "confidence_entity": 0.7247841954231262,
+        "value": "fruits",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are whole grains necessary on a daily basis?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 16,
+        "value": "whole grains",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 10,
+        "end": 16,
+        "confidence_entity": 0.6032697558403015,
+        "value": "grains",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "do i really have to eat fruits daily?",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "fruits",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 24,
+        "end": 30,
+        "confidence_entity": 0.7021946310997009,
+        "value": "fruits",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is fish necessary? i dislike fish",
+    "entities": [
+      {
+        "start": 3,
+        "end": 7,
+        "value": "fish",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 3,
+        "end": 7,
+        "confidence_entity": 0.9880125522613525,
+        "value": "fish",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "proteins",
+        "start": 29,
+        "end": 33,
+        "confidence_entity": 0.9798760414123535,
+        "value": "fish",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i barely consume dairy. do i need to drink more milk?",
+    "entities": [
+      {
+        "start": 17,
+        "end": 22,
+        "value": "dairy",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dairy",
+        "start": 48,
+        "end": 52,
+        "confidence_entity": 0.5075114965438843,
+        "value": "milk",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is dairy important?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 8,
+        "value": "dairy",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "how important is it to eat yogurt daily?",
+    "entities": [
+      {
+        "start": 27,
+        "end": 33,
+        "value": "yogurt",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "i don't like whole-grain bread. do i really have to eat it?",
+    "entities": [
+      {
+        "start": 13,
+        "end": 30,
+        "value": "whole-grain bread",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "grains",
+        "start": 25,
+        "end": 30,
+        "confidence_entity": 0.82911217212677,
+        "value": "bread",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are whole grains necessary?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 16,
+        "value": "whole grains",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is there such a thing as too much red meat?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 42,
+        "value": "red meat",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 38,
+        "end": 42,
+        "confidence_entity": 0.9961380362510681,
+        "value": "meat",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is the recommended amount of dairy to eat?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 39,
+        "value": "dairy",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 34,
+        "end": 39,
+        "confidence_entity": 0.3084220886230469,
+        "value": "dairy",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is a good amount of fruits to be eating?",
+    "entities": [
+      {
+        "start": 25,
+        "end": 31,
+        "value": "fruits",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.7626856565475464,
+        "value": "fruits",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "how much dairy should i have on a daily basis?",
+    "entities": [
+      {
+        "start": 9,
+        "end": 14,
+        "value": "dairy",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can i eat white bread everyday?",
+    "entities": [
+      {
+        "start": 10,
+        "end": 21,
+        "value": "white bread",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "grains",
+        "start": 16,
+        "end": 21,
+        "confidence_entity": 0.5026981830596924,
+        "value": "bread",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is it ok to have ice-cream every day?",
+    "entities": [
+      {
+        "start": 17,
+        "end": 26,
+        "value": "ice-cream",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are examples of dark green vegetables",
+    "entities": [
+      {
+        "start": 21,
+        "end": 31,
+        "value": "dark green",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 32,
+        "end": 42,
+        "confidence_entity": 0.872856080532074,
+        "value": "vegetables",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what type of vegetables are potatoes",
+    "entities": [
+      {
+        "start": 28,
+        "end": 36,
+        "value": "potatoes",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "are green peas healthy?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 14,
+        "value": "green peas",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are other kinds of citrus fruits",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "citrus",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 24,
+        "end": 30,
+        "confidence_entity": 0.6463348865509033,
+        "value": "citrus",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what fruit is watermelon",
+    "entities": [
+      {
+        "start": 14,
+        "end": 24,
+        "value": "watermelon",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what type of fruits are pineapples",
+    "entities": [
+      {
+        "start": 24,
+        "end": 34,
+        "value": "pineapples",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.6748062968254089,
+        "value": "fruits",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "fruits",
+        "start": 24,
+        "end": 34,
+        "confidence_entity": 0.8658817410469055,
+        "value": "pineapples",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is honeydew a melon?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "honeydew",
+        "entity": "fruits"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 14,
+        "end": 19,
+        "confidence_entity": 0.5275521278381348,
+        "value": "melon",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is soy milk a source of dairy?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "soy milk]",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.34185534715652466,
+        "value": "soy",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dairy",
+        "start": 7,
+        "end": 11,
+        "confidence_entity": 0.8733918070793152,
+        "value": "milk",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can i have condensed milk instead of milk?",
+    "entities": [
+      {
+        "start": 11,
+        "end": 25,
+        "value": "condensed milk",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dairy",
+        "start": 21,
+        "end": 25,
+        "confidence_entity": 0.8254920244216919,
+        "value": "milk",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dairy",
+        "start": 37,
+        "end": 41,
+        "confidence_entity": 0.5337037444114685,
+        "value": "milk",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is cream unhealthy?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 8,
+        "value": "cream",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is ice cream healthy?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 12,
+        "value": "ice cream",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are some kinds of healthy cheeses?",
+    "entities": [
+      {
+        "start": 31,
+        "end": 38,
+        "value": "cheeses",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is ghee dairy?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 7,
+        "value": "ghee",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is barley a type of grain?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 9,
+        "value": "barley",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 3,
+        "end": 9,
+        "confidence_entity": 0.582128643989563,
+        "value": "barley",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what kind of grains is masa",
+    "entities": [
+      {
+        "start": 23,
+        "end": 27,
+        "value": "masa",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.4329032897949219,
+        "value": "grains",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what type of grains are crackers",
+    "entities": [
+      {
+        "start": 24,
+        "end": 32,
+        "value": "crackers",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "vegetables",
+        "start": 13,
+        "end": 19,
+        "confidence_entity": 0.4849379062652588,
+        "value": "grains",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "is pasta a healthy grain?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 8,
+        "value": "pasta",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what is red meat?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 16,
+        "value": "red meat",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.9887599945068359,
+        "value": "meat",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "i need help deciding what kind of red and orange veggies to get",
+    "entities": [
+      {
+        "start": 34,
+        "end": 48,
+        "value": "dark green",
+        "entity": "vegetables"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is salmon an oily fish?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 9,
+        "value": "salmon",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 3,
+        "end": 9,
+        "confidence_entity": 0.9833753705024719,
+        "value": "salmon",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "proteins",
+        "start": 18,
+        "end": 22,
+        "confidence_entity": 0.9858351349830627,
+        "value": "fish",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what kind of seafood is oyster",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "oyster",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 13,
+        "end": 20,
+        "confidence_entity": 0.9968822002410889,
+        "value": "seafood",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "proteins",
+        "start": 24,
+        "end": 30,
+        "confidence_entity": 0.9834801554679871,
+        "value": "oyster",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what type of meat is chicken",
+    "entities": [
+      {
+        "start": 21,
+        "end": 28,
+        "value": "chicken",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 13,
+        "end": 17,
+        "confidence_entity": 0.9837154746055603,
+        "value": "meat",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "proteins",
+        "start": 21,
+        "end": 28,
+        "confidence_entity": 0.9955228567123413,
+        "value": "chicken",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "are eggs healthy?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 8,
+        "value": "eggs",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is cod a white fish?",
+    "entities": [
+      {
+        "start": 3,
+        "end": 6,
+        "value": "cod",
+        "entity": "proteins"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "proteins",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.9043560028076172,
+        "value": "cod",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "proteins",
+        "start": 15,
+        "end": 19,
+        "confidence_entity": 0.991378664970398,
+        "value": "fish",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what are some things that are carbohydrates?",
+    "entities": [
+      {
+        "start": 30,
+        "end": 43,
+        "value": "carbohydrates",
+        "entity": "grains"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

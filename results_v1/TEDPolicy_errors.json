@@ -1,0 +1,75 @@
+[
+  {
+    "text": "How can I make chicken soup?",
+    "entities": [
+      {
+        "text": "How can I make chicken soup?",
+        "start": 15,
+        "end": 22,
+        "entity": "proteins",
+        "value": "chicken"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Give me a recipe for pork taco",
+    "entities": [
+      {
+        "start": 21,
+        "end": 25,
+        "value": "pork",
+        "entity": "proteins"
+      },
+      {
+        "start": 26,
+        "end": 30,
+        "value": "taco",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "is it ok to eat ice-cream every day?",
+    "entities": [
+      {
+        "start": 16,
+        "end": 25,
+        "value": "ice-cream",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "what are some examples of healthy dairy?",
+    "entities": [
+      {
+        "start": 34,
+        "end": 39,
+        "value": "dairy",
+        "entity": "dairy"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "hello, can you give me a recipe for breakfast taco?",
+    "entities": [
+      {
+        "start": 36,
+        "end": 45,
+        "value": "breakfast",
+        "entity": "dish_categories"
+      },
+      {
+        "start": 46,
+        "end": 50,
+        "value": "taco",
+        "entity": "dish_categories"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

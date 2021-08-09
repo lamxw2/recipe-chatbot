@@ -74,7 +74,7 @@ stories:
 - story: button happy path
   steps:
   - user: |
-      give me a recipe with chicken
+      give me a recipe with [chicken](proteins)
     intent: ask_recipe
   - action: action_retrieve_recipes
   - user: |
@@ -84,7 +84,7 @@ stories:
 - story: button unhappy path
   steps:
   - user: |
-      give me a recipe with chicken
+      give me a recipe with [chicken](proteins)
     intent: ask_recipe
   - action: action_retrieve_recipes
   - user: |
@@ -94,7 +94,7 @@ stories:
 - story: button cancel path
   steps:
   - user: |
-      give me a recipe with chicken
+      give me a recipe with [chicken](proteins)
     intent: ask_recipe
   - action: action_retrieve_recipes
   - user: |
