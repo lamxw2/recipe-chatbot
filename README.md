@@ -15,7 +15,7 @@ The recipe dataset was obtained from https://www.kaggle.com/hugodarwood/epirecip
 ## Getting Started
 
 The user can ask CoCo for help on how to use the chatbot.<br>
-![Image of greeting](screenshots\greet.png)
+![Image of greeting](screenshots/greet.png)
 
 ## Healthy Eating
 
@@ -24,39 +24,39 @@ The user can ask CoCo about what a healthy diet consists of, how much of a food 
 Examples of conversations about a healthy diet:
 
 Asking about a basic healthy diet<br>
-![Image of generic balanced diet](screenshots\balanced_diet_generic.png)<br>
+![Image of generic balanced diet](screenshots/balanced_diet_generic.png)<br>
 
 Asking about how much chicken to have in a healthy diet<br>
-![Image of balanced diet about protein](screenshots\balanced_diet_protein.png)<br>
+![Image of balanced diet about protein](screenshots/balanced_diet_protein.png)<br>
 
 Asking about how much milk to have in a healthy diet<br>
-![Image of balaned diet about dairy](screenshots\balanced_diet_dairy.png)<br>
+![Image of balaned diet about dairy](screenshots/balanced_diet_dairy.png)<br>
 
 Asking if ice-cream is healthy<br>
-![Image of balaned diet about dairy](screenshots\ice-cream.png)<br>
+![Image of balaned diet about dairy](screenshots/ice-cream.png)<br>
 
 Example of types of healthy food:
 
 Asking about types of cheeses<br>
-![Image of examples of cheese](screenshots\cheese_examples.png)
+![Image of examples of cheese](screenshots/cheese_examples.png)
 
 Asking if salmon is a type of oily fish<br>
-![Image of types of oily fish](screenshots\salmon_oily_fish.png)
+![Image of types of oily fish](screenshots/salmon_oily_fish.png)
 
 Asking about other types of dark-green vegetables<br>
-![Image of types of dark green vegetables](screenshots\dark_green_examples.png)
+![Image of types of dark green vegetables](screenshots/dark_green_examples.png)
 
 ## Recipe Suggestions
 The user can ask for recipes based on ingredients or the dish type.
 
 A preview of asking for breakfast taco recipe:<br>
-![Image of breakfast taco recipe](screenshots\recipe_preview.png)
+![Image of breakfast taco recipe](screenshots/recipe_preview.png)
 
 Cancelling the recipe:<br>
-![Image of cancelling recipe](screenshots\recipe_cancel.png)
+![Image of cancelling recipe](screenshots/recipe_cancel.png)
 
 ## Chitchat
 CoCo is able to handle chitchat, albeit very minimally.
 
 CoCo can tell a few jokes, respond to thanks and goodbye.<br>
-![Image of chitchat](screenshots\chitchat.png)
+![Image of chitchat](screenshots/chitchat.png)
